@@ -31,7 +31,7 @@ x = mouse_x;
 y = mouse_y;
 webX = -1;
 webY = -1;
-maxWebLength = 100;
+maxWebLength = 800;
 </string>
           </argument>
         </arguments>

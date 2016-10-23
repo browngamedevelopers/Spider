@@ -25,13 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>grav = 1.0; 
+            <string>/// Initialize Variables
+
+grav = 1.0; 
 hsp = 0; 
 vsp = 0; 
 jumpSpeed = 16; 
 moveSpeed = 5;
 maxfallspeed = 20;
-onVine = false;
+onVine = true;
+depth = -22;
 </string>
           </argument>
         </arguments>
@@ -54,11 +57,13 @@ onVine = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Get input 
+            <string>/// Movement
+
+// Get input 
 kLeft = -(keyboard_check(vk_left) || keyboard_check(ord('A'))); 
 kRight = keyboard_check(vk_right) || keyboard_check(ord('D')); 
 kUp = -(keyboard_check_pressed(vk_up) || keyboard_check(ord('W')));
-kDown = keyboard_check_pressed(vk_down) || keyboard_check(ord('D'));
+kDown = keyboard_check_pressed(vk_down) || keyboard_check(ord('S'));
 
 // Use input 
 moveH = kLeft + kRight; 
@@ -108,8 +113,8 @@ if (place_meeting(x, y + vsp, objFloor)) {
     } 
     vsp = 0; 
 }
-show_debug_message(hsp);
-show_debug_message(vsp);
+//show_debug_message(hsp);
+//show_debug_message(vsp);
 y += vsp;
 
 
