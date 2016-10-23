@@ -68,9 +68,9 @@ depth = -22;
 // Get input 
 
 // end game
-if(escape){
-    game_end();
-}
+//if(escape){
+  //  game_end();
+//}
 
 kLeft = -(keyboard_check(vk_left) || keyboard_check(ord('A'))); 
 kRight = keyboard_check(vk_right) || keyboard_check(ord('D')); 
@@ -128,11 +128,6 @@ x += hsp;
 if (place_meeting(x, y + vsp, objFloor)) { 
     show_message("Dead!"); 
 }
-<<<<<<< HEAD
-=======
-y += vsp;
->>>>>>> Add obstacles
-
 y += vsp;
 
 // Make sure to delete web after firing
