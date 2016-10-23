@@ -13,6 +13,7 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\objFloor</object>
     <object>objects\objPlayer</object>
