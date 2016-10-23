@@ -29,8 +29,9 @@
 hsp = 0; 
 vsp = 0; 
 jumpSpeed = 16; 
-moveSpeed = 13;
+moveSpeed = 5;
 maxfallspeed = 20;
+onVine = false;
 </string>
           </argument>
         </arguments>
@@ -56,17 +57,38 @@ maxfallspeed = 20;
             <string>// Get input 
 kLeft = -(keyboard_check(vk_left) || keyboard_check(ord('A'))); 
 kRight = keyboard_check(vk_right) || keyboard_check(ord('D')); 
-kJump = keyboard_check_pressed(vk_up) || keyboard_check(ord('W'));
+kUp = -(keyboard_check_pressed(vk_up) || keyboard_check(ord('W')));
+kDown = keyboard_check_pressed(vk_down) || keyboard_check(ord('D'));
 
 // Use input 
-move = kLeft + kRight; 
-hsp = move * moveSpeed; 
-if (vsp &lt; maxfallspeed) { 
-    vsp += grav;
-};
+moveH = kLeft + kRight; 
+moveV = kUp + kDown;
 
-if (place_meeting(x, y + 1, objFloor)) { 
-    vsp = kJump * -jumpSpeed 
+
+// Normal movement if not on vine
+if (not onVine) {
+    hsp = moveH * moveSpeed;  
+    
+    // Falling   
+    if (vsp &lt; maxfallspeed) { 
+        vsp += grav;
+    };
+
+    // Jumping
+    if (place_meeting(x, y + 1, objFloor) and not onVine) { 
+        vsp = kUp * -jumpSpeed;
+    }
+
+    // Vine collision
+    if (place_meeting(x + hsp, y + vsp, objVine)) {
+        onVine = true;
+        vsp = 0;
+        hsp = 0; 
+    }
+}
+
+if (onVine) {
+    vsp = moveV * moveSpeed;
 }
 
 // H Collisions 
@@ -80,12 +102,17 @@ x += hsp;
 
 // v Collisions 
 if (place_meeting(x, y + vsp, objFloor)) { 
+    show_debug_message("colliding");
     while (!place_meeting(x, y + sign(vsp), objFloor)) {
         y += sign(vsp); 
     } 
     vsp = 0; 
-} 
-     y += vsp;
+}
+show_debug_message(hsp);
+show_debug_message(vsp);
+y += vsp;
+
+
 </string>
           </argument>
         </arguments>
