@@ -29,9 +29,7 @@
 depth = -1000;
 x = mouse_x;
 y = mouse_y;
-webX = -1;
-webY = -1;
-maxWebLength = 800;
+maxWebLength = 750;
 </string>
           </argument>
         </arguments>
@@ -54,24 +52,34 @@ maxWebLength = 800;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Follow mouse
+            <string>/// Follow mouse and handle Clicks
 
 x = mouse_x;
 y = mouse_y;
-var left = mouse_check_button_pressed(mb_left);
-var escape = keyboard_check(vk_escape);
+var left = device_mouse_check_button(0, mb_left);
 
-// end game
-if(escape){
-    game_end();
+// fire if the mouse is clicked in range over block
+if(left and distance_to_object(objPlayer) &lt; maxWebLength and instance_position(x, y, objFloor)){
+
+    // create a web towards x and y from the spider
+    with(objPlayer){
+        if(web == noone){
+            firingWeb = true;
+            pivotX = objMouse.x;
+            pivotY = objMouse.y;
+            web = instance_create(x + sprite_width / 2, y - sprite_height / 2, objWeb);
+            web.image_angle = (point_direction(x, y, pivotX, pivotY) + 90)% 360;
+            web.pivotX = pivotX;
+            web.pivotY = pivotY;
+        }
+    }
 }
 
-// fire if the mouse is in range of the web
-if(left and (distance_to_object(objPlayer) &lt; maxWebLength)){
-    webX = x;
-    webY = y;
-    
+// Do not fire web
+else{
+    objPlayer.firingWeb = false;
 }
+
 </string>
           </argument>
         </arguments>

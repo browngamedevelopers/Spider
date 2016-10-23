@@ -10,15 +10,18 @@
     <sprite>sprites\sprPlayer</sprite>
     <sprite>sprites\sprVine</sprite>
     <sprite>sprites\sprMouse</sprite>
+    <sprite>sprites\sprWeb</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts"/>
   <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\objFloor</object>
     <object>objects\objPlayer</object>
     <object>objects\objVine</object>
     <object>objects\objMouse</object>
+    <object>objects\objWeb</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
