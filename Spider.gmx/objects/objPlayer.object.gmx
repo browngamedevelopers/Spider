@@ -36,10 +36,12 @@ maxfallspeed = 20;
 onVine = true;
 depth = -999;
 
+isSwinging = true;
 firingWeb = false;
 web = noone;
-pivotX = -1;
-pivotY = -1;
+pivotX = 250;
+pivotY = 50;
+depth = -22;
 </string>
           </argument>
         </arguments>
@@ -135,6 +137,42 @@ if(web != noone and not firingWeb){
         instance_destroy();
     }
     web = noone;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Swinging physics
+
+if (isSwinging) {
+    vsp = 0;
+    hsp = 0;
+    var theta = atan2((pivotX - x), (y - pivotY));
+    var webVectorX = x - pivotX;
+    var webVectorY = y - pivotY;
+    var webLength = vectorMagnitude(webVectorX, webVectorY);
+    
+    // var force = mass * grav;
+    var newAngle = theta + 0.01;
+    t = 3 * pi / 4;
+    x = pivotX - webLength * cos(newAngle);
+    y = pivotY + webLength * sin(newAngle);
 }
 </string>
           </argument>
