@@ -7,18 +7,19 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sprFloor</sprite>
-    <sprite>sprites\sprEnemy</sprite>
-    <sprite>sprites\sprBox</sprite>
+    <sprite>sprites\sprPlayer</sprite>
+    <sprite>sprites\sprVine</sprite>
+    <sprite>sprites\sprMouse</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\objEnemy</object>
     <object>objects\objFloor</object>
     <object>objects\objPlayer</object>
+    <object>objects\objVine</object>
+    <object>objects\objMouse</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room1</room>
     <room>rooms\room0</room>
   </rooms>
   <help>
