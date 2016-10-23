@@ -20,9 +20,7 @@
     <object>objects\objVine</object>
     <object>objects\objMouse</object>
   </objects>
-  <rooms name="rooms">
-    <room>rooms\room0</room>
-  </rooms>
+  <rooms name="rooms"/>
   <help>
     <rtf>help.rtf</rtf>
   </help>
