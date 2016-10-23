@@ -14,10 +14,10 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <scripts name="scripts"/>
-    <script>scripts\atan2</script>
-    <script>scripts\vectorMagnitude</script>
-  <fonts name="fonts"/>
+  <scripts name="scripts">
+    <script>scripts\atan2.gml</script>
+    <script>scripts\vectorMagnitude.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\objFloor</object>
     <object>objects\objPlayer</object>
