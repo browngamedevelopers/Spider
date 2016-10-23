@@ -41,15 +41,6 @@ web = noone;
 pivotX = -1;
 pivotY = -1;
 depth = -22;
-mass = 10;
-
-isSwinging = true;
-
-swingAnchorX = 300;
-swingAnchorY = 50;
-instance_create(swingAnchorX, swingAnchorY, objAnchor);
-
-thetaSpeed = 1;
 </string>
           </argument>
         </arguments>
@@ -144,46 +135,6 @@ if(web != noone and not firingWeb){
     }
     web = noone;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Swinging Physics
-
-// swingAnchorX;
-// swingAnchorY;
-
-if (isSwinging) {
-    vsp = 0;
-    hsp = 0;
-    var theta = atan2((swingAnchorX - x), (y - swingAnchorY));
-    var webVectorX = x - swingAnchorX;
-    var webVectorY = y - swingAnchorY;
-    var webLength = vectorMagnitude(webVectorX, webVectorY);
-    
-    // var force = mass * grav;
-    var newAngle = theta + 0.01;
-    t = 3 * pi / 4;
-    x = swingAnchorX - webLength * cos(newAngle);
-    y = swingAnchorY + webLength * sin(newAngle);
-}
-
 </string>
           </argument>
         </arguments>
