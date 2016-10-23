@@ -10,7 +10,10 @@
     <sprite>sprites\sprPlayer</sprite>
     <sprite>sprites\sprVine</sprite>
     <sprite>sprites\sprMouse</sprite>
-    <sprite>sprites\sprWeb</sprite>
+    <sprite>sprites\sprFlyingEnemy</sprite>
+    <sprite>sprites\sprCrawlingEnemy</sprite>
+    <sprite>sprites\sprRaindrop</sprite>
+    <sprite>sprites\sprCanHook</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -24,6 +27,10 @@
     <object>objects\objVine</object>
     <object>objects\objMouse</object>
     <object>objects\objWeb</object>
+    <object>objects\objFlyingEnemy</object>
+    <object>objects\objCrawlingEnemy</object>
+    <object>objects\objRaindrop</object>
+    <object>objects\objCanHook</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
