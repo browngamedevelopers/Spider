@@ -66,16 +66,16 @@ depth = -22;
             <string>/// Movement
 
 // Get input 
-var kLeft = -(keyboard_check(vk_left) || keyboard_check(ord('A'))); 
-var kRight = keyboard_check(vk_right) || keyboard_check(ord('D')); 
-var kUp = -(keyboard_check_pressed(vk_up) || keyboard_check(ord('W')));
-var kDown = keyboard_check_pressed(vk_down) || keyboard_check(ord('S'));
-var escape = keyboard_check(vk_escape);
 
 // end game
-if(escape){
-    game_end();
-}
+//if(escape){
+  //  game_end();
+//}
+
+kLeft = -(keyboard_check(vk_left) || keyboard_check(ord('A'))); 
+kRight = keyboard_check(vk_right) || keyboard_check(ord('D')); 
+kUp = -(keyboard_check(vk_up) || keyboard_check(ord('W')));
+kDown = keyboard_check(vk_down) || keyboard_check(ord('S'));
 
 // Use input 
 moveH = kLeft + kRight; 
@@ -90,11 +90,6 @@ if(not onVine){
         vsp += grav;
     };
 
-    // Jumping
-    if (place_meeting(x, y + 1, objFloor) and not onVine) { 
-        vsp = kUp * -jumpSpeed;
-    }
-
     // Vine collision
     if (place_meeting(x + hsp, y + vsp, objVine)) {
         onVine = true;
@@ -108,24 +103,31 @@ else if(not firingWeb){
     vsp = moveV * moveSpeed;
 }
 
-// H Collisions 
+//CrawlingBug collision
+//if (place_meeting(pivot_x, pivot_y, objCrawlingEnemy)) {
+//    onVine = false;
+//}
+    
+//FlyingEnemy collision
+if (place_meeting(x, y, objFlyingEnemy)) {
+    show_message("Dead!");
+}
+
+//Raindrop collision
+if (place_meeting(x, y, objRaindrop)) {
+    show_message("Dead!");
+}
+
+// H Floor Collisions 
 if (place_meeting(x + hsp, y, objFloor)) { 
-    while (!place_meeting(x + sign(hsp), y, objFloor)) { 
-        x += sign(hsp); 
-    } 
-    hsp = 0; 
+    show_message("Dead!");
 } 
 x += hsp;
 
-// v Collisions 
+// v Floor Collisions 
 if (place_meeting(x, y + vsp, objFloor)) { 
-    show_debug_message("colliding");
-    while (!place_meeting(x, y + sign(vsp), objFloor)) {
-        y += sign(vsp); 
-    } 
-    vsp = 0; 
+    show_message("Dead!"); 
 }
-
 y += vsp;
 
 // Make sure to delete web after firing
