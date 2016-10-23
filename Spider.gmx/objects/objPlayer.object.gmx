@@ -40,7 +40,6 @@ firingWeb = false;
 web = noone;
 pivotX = -1;
 pivotY = -1;
-depth = -22;
 </string>
           </argument>
         </arguments>

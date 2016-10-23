@@ -14,6 +14,7 @@
     <sprite>sprites\sprCrawlingEnemy</sprite>
     <sprite>sprites\sprRaindrop</sprite>
     <sprite>sprites\sprCanHook</sprite>
+    <sprite>sprites\sprWeb</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -21,7 +22,6 @@
     <script>scripts\atan2.gml</script>
     <script>scripts\vectorMagnitude.gml</script>
   </scripts>
-  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\objFloor</object>
     <object>objects\objPlayer</object>
