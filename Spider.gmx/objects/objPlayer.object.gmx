@@ -150,47 +150,33 @@ y += vsp;
 
 if (isSwinging) {
 
-    // Get input 
-    var kUp = -(keyboard_check(vk_up) || keyboard_check(ord('W')));
-    var kDown = keyboard_check(vk_down) || keyboard_check(ord('S'));
-
-    if (kUp) {
-    
-    }
-    
-    var webVectorX = (pivotX - x);
-    var webVectorY = (y - pivotY);
-    var theta = atan2(webVectorX, webVectorY);
+    // Don't move normally when swinging
     hsp = 0;
     vsp = 0;
-    show_debug_message("theta; " + string(theta * 180 / pi));
+
+    // Get input 
+    var kUp = keyboard_check(vk_up) || keyboard_check(ord('W'));
+    var kDown = keyboard_check(vk_down) || keyboard_check(ord('S'));
+    show_debug_message("kup: " + string(kUp));
+    // Vector from player to pivot
+    var webVectorX = (pivotX - x);
+    var webVectorY = (y - pivotY);
+    
+    // Angle and length of webVector
+    var theta = atan2(webVectorX, webVectorY);
     var webLength = vectorMagnitude(webVectorX, webVectorY);
     
-    /*
-    var tangentX = 1
-    var tangentY = -webVectorX / webVectorY;
-    var tangentMag = vectorMagnitude(tangentX, tangentY);
-    var tangentX = tangentX / tangentMag;
-    var tangentY = tangentY / tangentMag;
-    var force = grav;
-    var forceTangent = force * cos(theta);
-    
-    var projectedX = x + forceTangent * tangentX;
-    var projectedY = y + forceTangent * tangentY;
-    var newAngle = atan2(pivotX - projectedX, projectedY - pivotY);
-    */
-    
+    // Calculate angular acceleration and adjust angular momentum accordingly
     thetaAcceleration = grav * cos(theta) / webLength;
     thetaSpeed = thetaSpeed + thetaAcceleration;
     newAngle = theta + thetaSpeed;
-    //x = pivotX - webLength * cos(newAngle);
-    //y = pivotY + webLength * sin(newAngle);
+    
+    // Climbing up web
+    show_debug_message("climbing up");
+    var webLength = webLength - kUp * 3 + kDown * 3;
     
     x = pivotX - webLength * cos(newAngle);
     y = pivotY + webLength * sin(newAngle);
-  
-    // hsp = hsp + forceTangent * tangentX;
-    // vsp = vsp - forceTangent * tangentY;
 }
 </string>
           </argument>
