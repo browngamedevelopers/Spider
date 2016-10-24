@@ -59,11 +59,12 @@ y = mouse_y;
 var left = device_mouse_check_button(0, mb_left);
 
 // fire if the mouse is clicked in range over block
-if(left and distance_to_object(objPlayer) &lt; maxWebLength and instance_position(x, y, objFloor)){
+if(left and distance_to_object(objPlayer) &lt; maxWebLength and instance_position(x, y, objFloor)){    
 
     // create a web towards x and y from the spider
     with(objPlayer){
         if(web == noone){
+            isSwinging = true;
             firingWeb = true;
             pivotX = objMouse.x;
             pivotY = objMouse.y;

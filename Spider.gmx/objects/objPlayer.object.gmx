@@ -27,21 +27,23 @@
             <kind>1</kind>
             <string>/// Initialize Variables
 
-grav = 1.0; 
+grav = 1;  
 hsp = 0; 
 vsp = 0; 
 jumpSpeed = 16; 
-moveSpeed = 5;
+moveSpeed = 2;
 maxfallspeed = 20;
 onVine = true;
 depth = -999;
 
-isSwinging = true;
+isSwinging = false;
 firingWeb = false;
 web = noone;
 pivotX = 250;
 pivotY = 50;
 depth = -22;
+thetaSpeed = 0;
+
 </string>
           </argument>
         </arguments>
@@ -82,25 +84,8 @@ kDown = keyboard_check(vk_down) || keyboard_check(ord('S'));
 moveH = kLeft + kRight; 
 moveV = kUp + kDown;
 
-// Normal movement if not on vine
-if(not onVine){
-    hsp = moveH * moveSpeed;  
-    
-    // Falling   
-    if (vsp &lt; maxfallspeed) { 
-        vsp += grav;
-    };
-
-    // Vine collision
-    if (place_meeting(x + hsp, y + vsp, objVine)) {
-        onVine = true;
-        vsp = 0;
-        hsp = 0; 
-    }
-}
-
 // Movement on Vine
-else if(not firingWeb){
+if (not firingWeb){
     vsp = moveV * moveSpeed;
 }
 
@@ -123,13 +108,11 @@ if (place_meeting(x, y, objRaindrop)) {
 if (place_meeting(x + hsp, y, objFloor)) { 
     show_message("Dead!");
 } 
-x += hsp;
 
 // v Floor Collisions 
 if (place_meeting(x, y + vsp, objFloor)) { 
     show_message("Dead!"); 
 }
-y += vsp;
 
 // Make sure to delete web after firing
 if(web != noone and not firingWeb){
@@ -138,6 +121,9 @@ if(web != noone and not firingWeb){
     }
     web = noone;
 }
+
+x += hsp;
+y += vsp;
 </string>
           </argument>
         </arguments>
@@ -161,18 +147,42 @@ if(web != noone and not firingWeb){
             <string>/// Swinging physics
 
 if (isSwinging) {
-    vsp = 0;
-    hsp = 0;
-    var theta = atan2((pivotX - x), (y - pivotY));
-    var webVectorX = x - pivotX;
-    var webVectorY = y - pivotY;
+
+    var webVectorX = (pivotX - x);
+    var webVectorY = (y - pivotY);
+    var theta = atan2(webVectorX, webVectorY);
+    show_debug_message("theta; " + string(theta * 180 / pi));
     var webLength = vectorMagnitude(webVectorX, webVectorY);
     
-    // var force = mass * grav;
-    var newAngle = theta + 0.01;
-    t = 3 * pi / 4;
+    /*
+    var tangentX = 1
+    var tangentY = -webVectorX / webVectorY;
+    var tangentMag = vectorMagnitude(tangentX, tangentY);
+    var tangentX = tangentX / tangentMag;
+    var tangentY = tangentY / tangentMag;
+    var force = grav;
+    var forceTangent = force * cos(theta);
+    
+    var projectedX = x + forceTangent * tangentX;
+    var projectedY = y + forceTangent * tangentY;
+    var newAngle = atan2(pivotX - projectedX, projectedY - pivotY);
+    */
+    
+    thetaAcceleration = grav * cos(theta) / webLength;
+    thetaSpeed = thetaSpeed + thetaAcceleration;
+    newAngle = theta + thetaSpeed;
+    //x = pivotX - webLength * cos(newAngle);
+    //y = pivotY + webLength * sin(newAngle);
+    
     x = pivotX - webLength * cos(newAngle);
     y = pivotY + webLength * sin(newAngle);
+  
+    // hsp = hsp + forceTangent * tangentX;
+    // vsp = vsp - forceTangent * tangentY;
+    show_debug_message("hsp: " + string(hsp));
+    show_debug_message("vsp: " + string(vsp));
+    show_debug_message("x: " + string(x)); 
+    show_debug_message("");
 }
 </string>
           </argument>

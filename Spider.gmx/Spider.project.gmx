@@ -24,9 +24,9 @@
   </scripts>
   <objects name="objects">
     <object>objects\objFloor</object>
+    <object>objects\objMouse</object>
     <object>objects\objPlayer</object>
     <object>objects\objVine</object>
-    <object>objects\objMouse</object>
     <object>objects\objWeb</object>
     <object>objects\objFlyingEnemy</object>
     <object>objects\objCrawlingEnemy</object>
