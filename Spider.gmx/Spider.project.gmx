@@ -25,13 +25,14 @@
   <objects name="objects">
     <object>objects\objFloor</object>
     <object>objects\objMouse</object>
-    <object>objects\objPlayer</object>
     <object>objects\objVine</object>
     <object>objects\objWeb</object>
     <object>objects\objFlyingEnemy</object>
     <object>objects\objCrawlingEnemy</object>
     <object>objects\objRaindrop</object>
     <object>objects\objCanHook</object>
+    <object>objects\objEnemyParent</object>
+    <object>objects\objPlayer</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

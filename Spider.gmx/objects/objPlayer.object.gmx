@@ -33,17 +33,16 @@ vsp = 0;
 jumpSpeed = 16; 
 moveSpeed = 2;
 maxfallspeed = 20;
-onVine = true;
 depth = -999;
 
 isSwinging = false;
 firingWeb = false;
+onVine = true;
+previousVineX = -1;;
 web = noone;
-pivotX = 250;
-pivotY = 50;
-depth = -22;
 thetaSpeed = 0;
-
+pivotX = -1;
+pivotY = -1;
 </string>
           </argument>
         </arguments>
@@ -69,39 +68,40 @@ thetaSpeed = 0;
             <string>/// Movement
 
 // Get input 
+var kLeft = -(keyboard_check(vk_left) || keyboard_check(ord('A'))); 
+var kRight = keyboard_check(vk_right) || keyboard_check(ord('D')); 
+var kUp = -(keyboard_check(vk_up) || keyboard_check(ord('W')));
+var kDown = keyboard_check(vk_down) || keyboard_check(ord('S'));
+var escape = keyboard_check(vk_escape);
 
-// end game
-//if(escape){
-  //  game_end();
-//}
-
-kLeft = -(keyboard_check(vk_left) || keyboard_check(ord('A'))); 
-kRight = keyboard_check(vk_right) || keyboard_check(ord('D')); 
-kUp = -(keyboard_check(vk_up) || keyboard_check(ord('W')));
-kDown = keyboard_check(vk_down) || keyboard_check(ord('S'));
+// end the game
+if(escape){
+    game_end();
+}
 
 // Use input 
 moveH = kLeft + kRight; 
 moveV = kUp + kDown;
 
+// Normal movement if not on vine
+if(not onVine){
+    hsp = moveH * moveSpeed;
+    // Falling   
+    if (vsp &lt; maxfallspeed and not firingWeb) { 
+        vsp += grav;
+    }
+
+    // Vine collision
+    if(place_meeting(x + hsp, y + vsp, objVine)){
+        //onVine = true;
+        vsp = 0;
+        hsp = 0;
+    }
+}
+
 // Movement on Vine
-if (not firingWeb){
+else if (not firingWeb and onVine){
     vsp = moveV * moveSpeed;
-}
-
-//CrawlingBug collision
-//if (place_meeting(pivot_x, pivot_y, objCrawlingEnemy)) {
-//    onVine = false;
-//}
-    
-//FlyingEnemy collision
-if (place_meeting(x, y, objFlyingEnemy)) {
-    show_message("Dead!");
-}
-
-//Raindrop collision
-if (place_meeting(x, y, objRaindrop)) {
-    show_message("Dead!");
 }
 
 // H Floor Collisions 
@@ -184,6 +184,31 @@ if (isSwinging) {
     show_debug_message("x: " + string(x)); 
     show_debug_message("");
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objEnemyParent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Collision with Enemy (death)
+
+show_message("dead");
 </string>
           </argument>
         </arguments>

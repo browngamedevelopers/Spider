@@ -66,6 +66,7 @@ if(left and distance_to_object(objPlayer) &lt; maxWebLength and instance_positio
         if(web == noone){
             isSwinging = true;
             firingWeb = true;
+            onVine = false;
             pivotX = objMouse.x;
             pivotY = objMouse.y;
             web = instance_create(x + sprite_width / 2, y - sprite_height / 2, objWeb);
@@ -78,7 +79,10 @@ if(left and distance_to_object(objPlayer) &lt; maxWebLength and instance_positio
 
 // Do not fire web
 else{
-    objPlayer.firingWeb = false;
+    with(objPlayer){
+        firingWeb = false;
+        isSwinging = false;
+    }
 }
 
 </string>
