@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Initialize Variables
 
-grav = 1;  
+grav = 0.5;  
 hsp = 0; 
 vsp = 0; 
 jumpSpeed = 16; 
@@ -85,9 +85,9 @@ moveV = kUp + kDown;
 
 // Normal movement if not on vine
 if(not onVine){
-    hsp = moveH * moveSpeed;
+    //hsp = moveH * moveSpeed;
     // Falling   
-    if (vsp &lt; maxfallspeed and not firingWeb) { 
+    if (not firingWeb) { 
         vsp += grav;
     }
 
@@ -122,6 +122,8 @@ if(web != noone and not firingWeb){
     web = noone;
 }
 
+show_debug_message("HSP: " + string(hsp));
+show_debug_message("VSP: " + string(vsp));
 x += hsp;
 y += vsp;
 </string>
@@ -151,6 +153,8 @@ if (isSwinging) {
     var webVectorX = (pivotX - x);
     var webVectorY = (y - pivotY);
     var theta = atan2(webVectorX, webVectorY);
+    hsp = 0;
+    vsp = 0;
     show_debug_message("theta; " + string(theta * 180 / pi));
     var webLength = vectorMagnitude(webVectorX, webVectorY);
     
@@ -179,10 +183,6 @@ if (isSwinging) {
   
     // hsp = hsp + forceTangent * tangentX;
     // vsp = vsp - forceTangent * tangentY;
-    show_debug_message("hsp: " + string(hsp));
-    show_debug_message("vsp: " + string(vsp));
-    show_debug_message("x: " + string(x)); 
-    show_debug_message("");
 }
 </string>
           </argument>

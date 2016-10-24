@@ -76,33 +76,6 @@
     <instance objName="objVine" x="64" y="704" name="inst_5DF4D90A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVine" x="64" y="736" name="inst_F72E0681" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVine" x="64" y="768" name="inst_EED77C5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="480" y="0" name="inst_CD25E995" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="480" y="32" name="inst_3AD9E2EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="480" y="64" name="inst_28CCE4FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="480" y="96" name="inst_4D3194BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="480" y="128" name="inst_D5B3520A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="128" name="inst_720A9D80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="160" name="inst_4F10A45C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="192" name="inst_CFF66D7B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="224" name="inst_FFE6D41C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="256" name="inst_0A0F411D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="288" name="inst_284DEACE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="320" name="inst_ECE22862" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="352" name="inst_6C9E60D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="384" name="inst_EF3EE6FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="416" name="inst_6D8C61B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="448" name="inst_0EEC733F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="480" name="inst_CE04791A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="512" name="inst_1DAED7A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="544" name="inst_39927564" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="576" name="inst_87870FCB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="608" name="inst_F59B9869" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="640" name="inst_E5B3D2E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="672" name="inst_05646141" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="704" name="inst_AD3770B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="736" name="inst_7E60294A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="768" name="inst_3068D38A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVine" x="448" y="800" name="inst_2A9F5B88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVine" x="928" y="0" name="inst_63496E4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVine" x="928" y="32" name="inst_C8E709F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVine" x="928" y="64" name="inst_B9CE63E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -194,8 +167,6 @@
     <instance objName="objCrawlingEnemy" x="114" y="46" name="inst_FA8CE814" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrawlingEnemy" x="518" y="46" name="inst_BAC99497" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrawlingEnemy" x="668" y="78" name="inst_C1AEF1CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRaindrop" x="352" y="64" name="inst_1659B341" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFlyingEnemy" x="192" y="256" name="inst_0F854609" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFlyingEnemy" x="27" y="64" name="inst_05F510BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCanHook" x="81" y="42" name="inst_C195F623" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCanHook" x="113" y="41" name="inst_8E5E9B90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
