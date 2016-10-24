@@ -68,10 +68,11 @@ if(left and distance_to_object(objPlayer) &lt; maxWebLength and instance_positio
             pivotX = objMouse.x;
             pivotY = objMouse.y;
             
-            // Run once right before shooting web
+            // Converts linear momentum into angular momentum on shooting web
             if (isSwinging == false) {
                 var r = sqrt(power(pivotX - x, 2) + power (pivotY - y, 2));
-                thetaSpeed = sqrt(power(hsp, 2) + power(vsp, 2)) / r 
+                thetaSpeed = (-(pivotY - y) * hsp + (pivotX - x) * vsp) / power(r, 2);
+                //thetaSpeed = sign(hsp) * (sqrt(power(hsp, 2) + power(vsp, 2)) / r);
             }   
             isSwinging = true;
             firingWeb = true;
