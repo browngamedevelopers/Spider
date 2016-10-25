@@ -51,6 +51,7 @@ window_set_cursor(cr_none);
             <kind>1</kind>
             <string>/// Initialize Variables
 
+
 // Gameplay constants
 grav = 0.3;   
 webSpeed = 5;
@@ -58,6 +59,7 @@ moveSpeed = 5;
 
 // Internal constants
 isSwinging = false;
+isShooting = false;
 onVine = true;
 previousVineX = -1;;
 web = noone;
@@ -65,12 +67,138 @@ thetaSpeed = 0;
 depth = -999;
 hsp = 0; 
 vsp = 0; 
+
+physics_world_update_speed(90);
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Swinging physics
+/*
+if (isSwinging) {
+
+    // Don't move normally when swinging
+    hsp = 0;
+    vsp = 0;
+
+    // Get input 
+    var kUp = keyboard_check(vk_up) || keyboard_check(ord('W'));
+    var kDown = keyboard_check(vk_down) || keyboard_check(ord('S'));
+
+    // Vector from player to pivot
+    var webVectorX = (web.x - x);
+    var webVectorY = (y - web.y);
+    
+    // Angle and length of webVector
+    var theta = atan2(webVectorX, webVectorY);
+    var webLength = vectorMagnitude(webVectorX, webVectorY);
+    
+    // Calculate angular acceleration and adjust angular momentum accordingly
+    thetaAcceleration = grav * cos(theta) / webLength;
+    thetaSpeed = thetaSpeed + thetaAcceleration;
+    newAngle = theta + thetaSpeed;
+    
+    // Climbing up web
+    var webLength = webLength - kUp * 3 + kDown * 3;
+    
+    x = pivotX - webLength * cos(newAngle);
+    y = pivotY + webLength * sin(newAngle);
+}
+*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Web Shooting
+
+var mouseDown = device_mouse_check_button(0, mb_left);
+
+// fire if the mouse is clicked in range over block
+if (mouseDown) { //and instance_position(mouse_x, mouse_y, objFloor)) {    
+    // and distance_to_object(objPlayer) &lt; maxWebLength 
+    // create a web towards x and y from the spider
+    if (not isShooting and not isSwinging) {
+    
+        var targetX = mouse_x - x; 
+        var targetY = mouse_y - y;
+        var targetMagnitude = vectorMagnitude(targetX, targetY);
+        var directionX = targetX / targetMagnitude;
+        var directionY = targetY / targetMagnitude;
+
+        web = instance_create(x, y, objWeb);
+         
+        with (web) {
+            // physics_apply_local_impulse(0, 0, 100 * directionX, 100 * directionY);
+            phy_speed_x = 1000 * directionX;
+            phy_speed_y = 1000 * directionY;
+        }
+        
+        isShooting = true;
+        onVine = false;
+    }
+     
+} else { // If mouse is not held down
+
+    // Destroy web and joint after letting go of mouse
+    if (isSwinging or isShooting) {
+        physics_joint_delete(joint);
+        with(web) {
+            instance_destroy();
+        }   
+    }
+
+    isSwinging = false;
+    isShooting = false;
+}
+
+
+
+
+
+
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -110,20 +238,20 @@ if (not onVine){
     //hsp = moveH * moveSpeed;
     // Falling   
     if (not isSwinging) { 
-        vsp += grav;
+        // vsp += grav;
         
         // Vine collision
-        if (place_meeting(x + hsp, y + vsp, objVine)){
+        // if (place_meeting(x + hsp, y + vsp, objVine)){
             onVine = true;
-            vsp = 0;
-            hsp = 0;
-        }
+            // vsp = 0;
+            // hsp = 0;
+        // }
     }
 
 // Movement on Vine
-} else if ((not isSwinging) and onVine) { 
-    vsp = moveV * moveSpeed;
-}
+} // else if ((not isSwinging) and onVine) { 
+  //  vsp = moveV * moveSpeed;
+// }
 
 
 // H Floor Collisions 
@@ -138,132 +266,6 @@ if (place_meeting(x, y + vsp, objFloor)) {
 
 x += hsp;
 y += vsp;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Swinging physics
-
-if (isSwinging) {
-
-    // Don't move normally when swinging
-    hsp = 0;
-    vsp = 0;
-
-    // Get input 
-    var kUp = keyboard_check(vk_up) || keyboard_check(ord('W'));
-    var kDown = keyboard_check(vk_down) || keyboard_check(ord('S'));
-
-    // Vector from player to pivot
-    var webVectorX = (web.pivotX - x);
-    var webVectorY = (y - web.pivotY);
-    
-    // Angle and length of webVector
-    var theta = atan2(webVectorX, webVectorY);
-    var webLength = vectorMagnitude(webVectorX, webVectorY);
-    
-    // Calculate angular acceleration and adjust angular momentum accordingly
-    thetaAcceleration = grav * cos(theta) / webLength;
-    thetaSpeed = thetaSpeed + thetaAcceleration;
-    newAngle = theta + thetaSpeed;
-    
-    // Climbing up web
-    var webLength = webLength - kUp * 3 + kDown * 3;
-    
-    x = pivotX - webLength * cos(newAngle);
-    y = pivotY + webLength * sin(newAngle);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Web Shooting
-
-var mouseDown = device_mouse_check_button(0, mb_left);
-
-// fire if the mouse is clicked in range over block
-if (mouseDown) { //and instance_position(mouse_x, mouse_y, objFloor)) {    
-    // and distance_to_object(objPlayer) &lt; maxWebLength 
-    // create a web towards x and y from the spider
-    if (not isSwinging) {
-        pivotX = mouse_x;
-        pivotY = mouse_y;
-        
-        // Converts linear momentum into angular momentum on shooting web
-        var r = sqrt(power(pivotX - x, 2) + power(pivotY - y, 2));
-        thetaSpeed = (-(pivotY - y) * hsp + (pivotX - x) * vsp) / power(r, 2);
-
-        web = instance_create(x, y, objWeb);
-        // web.image_angle = (point_direction(x, y, pivotX, pivotY) + 90) % 360;
-        web.pivotX = pivotX;
-        web.pivotY = pivotY;
-        
-        isSwinging = true;
-        onVine = false;
-    }
-     
-} else { // If mouse is not held down
-    // Do only once on release
-    if (isSwinging) {
-        var t = arctan2(web.pivotY - y, web.pivotX - x);
-        var r = sqrt(power(web.pivotY - y, 2) + power(web.pivotX - x, 2));
-
-        // Converting angular momentum to linear velocity on release
-        releaseVelocity = thetaSpeed * r;
-        hsp = - thetaSpeed * sin(t) * r;
-        vsp = thetaSpeed * cos(t) * r;
-    }
-    
-    // Make sure to delete web after firing
-    if (not isSwinging) {
-        with(web) {
-          instance_destroy();
-        }
-    }
-    isSwinging = false;
-}
-
-
-
-
-
-
-
-
-
-
 </string>
           </argument>
         </arguments>
@@ -295,7 +297,7 @@ show_message("dead");
       </action>
     </event>
   </events>
-  <PhysicsObject>0</PhysicsObject>
+  <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
@@ -306,5 +308,8 @@ show_message("dead");
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>25,25</point>
+    <point>25,25</point>
+  </PhysicsShapePoints>
 </object>

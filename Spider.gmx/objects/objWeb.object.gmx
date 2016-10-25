@@ -27,8 +27,63 @@
             <kind>1</kind>
             <string>/// Initialize variables
 depth = -998;
-pivotX = -1;
-pivotY = -1;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objFloor">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Web attach
+
+
+phy_speed_x = 0;
+phy_speed_y = 0;
+var webX = x;
+var webY = y;
+
+var firstCollide = false;
+with (objPlayer) {
+    firstCollide = not isSwinging;
+}
+
+// Create joint between web end and wall
+if (firstCollide) { // Called only once before start swinging
+    physics_joint_distance_create(
+        self, objFloor, 
+        x, y, x, y,
+        false);
+        
+    with (objPlayer) {
+    
+        webLength = vectorMagnitude(webX - x, webY - y);
+        
+        // Create joint between player and wall
+        joint = physics_joint_rope_create(
+            objPlayer, objFloor,
+            x, y, webX, webY, webLength, false);
+ 
+        isShooting = false;
+        isSwinging = true;
+    }
+}
+
 </string>
           </argument>
         </arguments>
@@ -52,23 +107,28 @@ pivotY = -1;
           <argument>
             <kind>1</kind>
             <string>/// Draw web
-draw_line_width_colour(objPlayer.x, objPlayer.y, pivotX, pivotY, 2, c_white, c_white);
+draw_line_width_colour(objPlayer.x, objPlayer.y, x, y, 2, c_white, c_white);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
   </events>
-  <PhysicsObject>0</PhysicsObject>
+  <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>0</PhysicsObjectShape>
-  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
+  <PhysicsObjectShape>1</PhysicsObjectShape>
+  <PhysicsObjectDensity>0.00999999977648258</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
-  <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
+  <PhysicsObjectLinearDamping>0</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
-  <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
+  <PhysicsObjectFriction>0</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>0,0</point>
+    <point>4,0</point>
+    <point>4,16</point>
+    <point>0,16</point>
+  </PhysicsShapePoints>
 </object>

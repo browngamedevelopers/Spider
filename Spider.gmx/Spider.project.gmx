@@ -15,7 +15,6 @@
     <sprite>sprites\sprRaindrop</sprite>
     <sprite>sprites\sprCanHook</sprite>
     <sprite>sprites\sprWeb</sprite>
-    <sprite>sprites\sprite9</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -26,10 +25,10 @@
   <objects name="objects">
     <object>objects\objFloor</object>
     <object>objects\objVine</object>
+    <object>objects\objRaindrop</object>
     <object>objects\objWeb</object>
     <object>objects\objFlyingEnemy</object>
     <object>objects\objCrawlingEnemy</object>
-    <object>objects\objRaindrop</object>
     <object>objects\objCanHook</object>
     <object>objects\objEnemyParent</object>
     <object>objects\objPlayer</object>
