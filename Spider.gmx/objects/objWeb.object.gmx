@@ -77,7 +77,7 @@ if (firstCollide) { // Called only once before start swinging
         // Create joint between player and wall
         joint = physics_joint_rope_create(
             objPlayer, objFloor,
-            x, y, webX, webY, webLength, false);
+            x, y, webX, webY, webLength,  false);
  
         isShooting = false;
         isSwinging = true;
