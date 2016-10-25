@@ -25,23 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Initialize Variables
+            <string>/// Setup crosshair
 
-grav = 0.3;  
-hsp = 0; 
-vsp = 0; 
-jumpSpeed = 16; 
-moveSpeed = 2;
-maxfallspeed = 20;
-depth = -999;
-
-isSwinging = false;
-onVine = true;
-previousVineX = -1;;
-web = noone;
-thetaSpeed = 0;
-pivotX = -1;
-pivotY = -1;
+cursor_sprite = sprMouse;
+window_set_cursor(cr_none);
 </string>
           </argument>
         </arguments>
@@ -62,10 +49,22 @@ pivotY = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Setup crosshair
+            <string>/// Initialize Variables
 
-cursor_sprite = sprMouse;
-window_set_cursor(cr_none);
+// Gameplay constants
+grav = 0.3;   
+webSpeed = 5;
+moveSpeed = 5;
+
+// Internal constants
+isSwinging = false;
+onVine = true;
+previousVineX = -1;;
+web = noone;
+thetaSpeed = 0;
+depth = -999;
+hsp = 0; 
+vsp = 0; 
 </string>
           </argument>
         </arguments>
@@ -172,8 +171,8 @@ if (isSwinging) {
     var kDown = keyboard_check(vk_down) || keyboard_check(ord('S'));
 
     // Vector from player to pivot
-    var webVectorX = (pivotX - x);
-    var webVectorY = (y - pivotY);
+    var webVectorX = (web.pivotX - x);
+    var webVectorY = (y - web.pivotY);
     
     // Angle and length of webVector
     var theta = atan2(webVectorX, webVectorY);
