@@ -52,7 +52,7 @@ pivotY = -1;
           <argument>
             <kind>1</kind>
             <string>/// Draw web
-draw_line_width_colour(objPlayer.x, objPlayer.y, pivotX, pivotY, 5, c_white, c_white);
+draw_line_width_colour(objPlayer.x, objPlayer.y, pivotX, pivotY, 2, c_white, c_white);
 </string>
           </argument>
         </arguments>
