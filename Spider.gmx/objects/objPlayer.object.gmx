@@ -182,6 +182,88 @@ if (isSwinging) {
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Follow mouse and handle Clicks
+
+var left = device_mouse_check_button(0, mb_left);
+
+// fire if the mouse is clicked in range over block
+if(left 
+    // and distance_to_object(objPlayer) &lt; maxWebLength 
+    and instance_position(mouse_x, mouse_y, objFloor)) {    
+
+    // create a web towards x and y from the spider
+    //with(objPlayer) {
+    
+        if(web == noone) {
+            pivotX = objMouse.x;
+            pivotY = objMouse.y;
+            
+            // Converts linear momentum into angular momentum on shooting web
+            if (isSwinging == false) {
+                var r = sqrt(power(pivotX - x, 2) + power (pivotY - y, 2));
+                thetaSpeed = (-(pivotY - y) * hsp + (pivotX - x) * vsp) / power(r, 2);
+                //thetaSpeed = sign(hsp) * (sqrt(power(hsp, 2) + power(vsp, 2)) / r);
+            }   
+            isSwinging = true;
+            firingWeb = true;
+            onVine = false;
+
+            web = instance_create(x + sprite_width / 2, y - sprite_height / 2, objWeb);
+            web.image_angle = (point_direction(x, y, pivotX, pivotY) + 90)% 360;
+            web.pivotX = pivotX;
+            web.pivotY = pivotY;
+        }
+    //}
+}
+
+// Is not firing web
+else {
+    // with(objPlayer){
+    
+        // Do only once on release
+        if(isSwinging){
+            var t = arctan2(web.pivotY - y, web.pivotX - x);
+            var r = sqrt(power(web.pivotY - y, 2) + power(web.pivotX - x, 2));
+
+            // Converting angular momentum to linear velocity on release
+            releaseVelocity = thetaSpeed * r;
+            hsp = - thetaSpeed * sin(t) * r;
+            vsp = thetaSpeed * cos(t) * r;
+        }
+        isSwinging = false;
+        firingWeb = false;
+//    }
+}
+
+
+
+
+
+
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="objEnemyParent">
       <action>
