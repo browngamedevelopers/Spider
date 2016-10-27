@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Initialize variables
 depth = -998;
-
+phy_bullet = true;
 </string>
           </argument>
         </arguments>

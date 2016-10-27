@@ -56,12 +56,13 @@ window_set_cursor(cr_none);
 grav = 0.3;   
 webSpeed = 5;
 moveSpeed = 5;
+moveSpeedHorizontal = 2;
 climbRate = 2;
 
 // Internal constants
 isSwinging = false;
 isShooting = false;
-onVine = true;
+onVine = false;
 previousVineX = -1;;
 web = noone;
 joint = noone;
@@ -70,6 +71,7 @@ depth = -999;
 hsp = 0; 
 vsp = 0; 
 
+phy_fixed_rotation = true;
 physics_world_update_speed(90);
 
 </string>
@@ -233,12 +235,15 @@ moveV = kUp + kDown;
 if (not onVine){
     //hsp = moveH * moveSpeed;
     // Falling   
-    if (not isSwinging) { 
+    if (not isSwinging and not isShooting) { 
         // vsp += grav;
+        
+        phy_speed_x = moveH * moveSpeedHorizontal;
+        
         
         // Vine collision
         // if (place_meeting(x + hsp, y + vsp, objVine)){
-            onVine = true;
+            // onVine = true;
             // vsp = 0;
             // hsp = 0;
         // }
