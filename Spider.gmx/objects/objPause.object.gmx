@@ -26,13 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>global.pause = 0;
-depth = -999;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="5" enumb="32">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -49,37 +48,10 @@ depth = -999;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check_pressed(vk_space)) {
-    if (global.pause == 0) {
-        global.pause = 1;
-        physics_pause_enable(true);
-    } 
-//    else {
-//        global.pause = 0;
-//        physics_pause_enable(false);
-//    }
-}
-
-if (global.pause) {
-    if (mouse_check_button_pressed(mb_left)) {
-        //for finding mouse location
-        //show_message(mouse_x - view_xview[0]);
-        //show_message(mouse_y - view_yview[0]);
-        
-        var myx = mouse_x - view_xview[0];
-        var myy = mouse_y - view_yview[0];
-        
-        if (myx &gt;= 534 &amp;&amp; myx &lt;= 684) {
-            if (myy &gt;= 134 &amp;&amp; myy &lt;= 165) {
-                global.pause = 0;
-                physics_pause_enable(false);
-            } else if (myy &gt;= 182 &amp;&amp; myy &lt;= 217) {
-            } else if (myy &gt;= 237 &amp;&amp; myy &lt;= 270) {
-            } else if (myy &gt;= 291 &amp;&amp; myy &lt;= 329) {
-                game_end();
-            }
-        }
-    }
+            <string>if (global.pause == 0) {
+    global.pause = 1;
+} else {
+    global.pause = 0;
 }
 </string>
           </argument>
@@ -104,23 +76,7 @@ if (global.pause) {
           <argument>
             <kind>1</kind>
             <string>if (global.pause) {
-    var x_center = view_xview[0] + 1200 / 2;
-    var y_center = view_yview[0] + 800 / 2
-
-    //background
-    draw_set_color(c_black);
-    draw_set_alpha(0.5); //transparency
-    draw_rectangle(0,0,room_width, room_height,0);
-    
-    //text
-    //draw_set_color(c_white);
-    draw_set_alpha(1);
-    //var message = "Game Paused";
-    //draw_text(x_center + string_width(message) / 2, y_center + string_height(message) / 2, "Game Paused");
-    draw_sprite(sprMenu, 200, x_center, 0);
-    
-    //back to default
-    draw_set_color(c_black);
+    //draw_et_
 }
 </string>
           </argument>

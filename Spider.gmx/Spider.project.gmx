@@ -40,7 +40,6 @@
       <sprite>sprites\sprMossBottom</sprite>
       <sprite>sprites\sprMossBotRight</sprite>
     </sprites>
-    <sprite>sprites\sprMenu</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkgdTree</background>
@@ -84,12 +83,9 @@
       <object>objects\objMossBottom</object>
       <object>objects\objMossBotRight</object>
     </objects>
-    <object>objects\objPause</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomMain</room>
-    <room>rooms\roomInitialize</room>
-    <room>rooms\room0</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -27,9 +27,9 @@
             <kind>1</kind>
             <string>/// Initialize Variables
 
-grav = 1.0;
+grav = 1.0; 
 hsp = 1;
-vsp =  0;
+vsp =  0; 
 moveSpeed = 5;
 </string>
           </argument>
@@ -53,16 +53,15 @@ moveSpeed = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.pause) exit;
-// v Collisions
-if (!place_meeting(x + hsp*24, y - 10, objFloor)) {
-    hsp *= -1;
+            <string>// v Collisions 
+if (!place_meeting(x + hsp*32, y, objMossFloor)) { 
+    hsp *= -1; 
 }
 
 // h Collisions
-if (place_meeting(x + hsp, y + 10, objMossFloor)) {
+if (place_meeting(x + hsp, y + 10, objMossFloor)) { 
     hsp *= -1;
-}
+} 
 
 //show_debug_message(hsp);
 //show_debug_message(vsp);
