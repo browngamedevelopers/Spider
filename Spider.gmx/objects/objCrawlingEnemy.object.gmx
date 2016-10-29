@@ -54,12 +54,12 @@ moveSpeed = 5;
           <argument>
             <kind>1</kind>
             <string>// v Collisions 
-if (!place_meeting(x + hsp*32, y, objMossFloor)) { 
+if (!place_meeting(x + hsp*32, y, objFloor)) { 
     hsp *= -1; 
 }
 
 // h Collisions
-if (place_meeting(x + hsp, y + 10, objMossFloor)) { 
+if (place_meeting(x + hsp, y + 10, objFloor)) { 
     hsp *= -1;
 } 
 

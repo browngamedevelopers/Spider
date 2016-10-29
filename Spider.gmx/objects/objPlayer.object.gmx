@@ -64,7 +64,6 @@ gravWhenFalling = 50;
 isSwinging = false;
 isShooting = false;
 onVine = false;
-mouseDown = false;
 previousVineX = -1;
 web = noone;
 joint = noone;
@@ -100,13 +99,7 @@ physics_world_gravity(0, gravWhenSwinging);
             <kind>1</kind>
             <string>/// Web Shooting
 
-if(device_mouse_check_button_pressed(0, mb_left)){
-    mouseDown = true;
-}
-
-if(not device_mouse_check_button(0, mb_left)){
-    mouseDown = false;
-}
+var mouseDown = device_mouse_check_button(0, mb_left);
 
 // fire if the mouse is clicked in range over block
 if (mouseDown) {

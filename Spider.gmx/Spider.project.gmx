@@ -41,16 +41,13 @@
       <sprite>sprites\sprMossBotRight</sprite>
     </sprites>
   </sprites>
-  <backgrounds name="background">
-    <background>background\bkgdTree</background>
-  </backgrounds>
+  <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\atan2.gml</script>
     <script>scripts\vectorMagnitude.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\objFloor</object>
     <object>objects\objVine</object>
     <object>objects\objRaindrop</object>
     <object>objects\objWeb</object>
@@ -72,7 +69,7 @@
       <object>objects\objMushroomTopRight</object>
     </objects>
     <objects name="Moss">
-      <object>objects\objMossFloor</object>
+      <object>objects\objFloor</object>
       <object>objects\objMossTopLeft</object>
       <object>objects\objMossTop</object>
       <object>objects\objMossTopRight</object>
