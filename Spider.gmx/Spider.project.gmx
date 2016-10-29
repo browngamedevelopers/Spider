@@ -15,7 +15,17 @@
     <sprite>sprites\sprRaindrop</sprite>
     <sprite>sprites\sprCanHook</sprite>
     <sprite>sprites\sprWeb</sprite>
-    <sprite>sprites\sprMushroom</sprite>
+    <sprites name="Mushroom">
+      <sprite>sprites\sprMushroomLeft</sprite>
+      <sprite>sprites\sprMushroomTopLeft</sprite>
+      <sprite>sprites\sprMushroomBotLeft</sprite>
+      <sprite>sprites\sprMushroomMiddle</sprite>
+      <sprite>sprites\sprMushroomTop</sprite>
+      <sprite>sprites\sprMushroomBottom</sprite>
+      <sprite>sprites\sprMushroomRight</sprite>
+      <sprite>sprites\sprMushroomTopRight</sprite>
+      <sprite>sprites\sprMushroomBotRight</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -28,16 +38,27 @@
     <object>objects\objVine</object>
     <object>objects\objRaindrop</object>
     <object>objects\objWeb</object>
-    <object>objects\objFlyingEnemy</object>
     <object>objects\objCrawlingEnemy</object>
     <object>objects\objCanHook</object>
     <object>objects\objEnemyParent</object>
+    <object>objects\objFlyingEnemy</object>
     <object>objects\objPlayer</object>
-    <object>objects\objMushroom</object>
     <object>objects\objPause</object>
+    <objects name="Mushroom">
+      <object>objects\objMushroom</object>
+      <object>objects\objMushroomLeft</object>
+      <object>objects\objMushroomTopLeft</object>
+      <object>objects\objMushroomBotLeft</object>
+      <object>objects\objMushroomMiddle</object>
+      <object>objects\objMushroomTop</object>
+      <object>objects\objMushroomBottom</object>
+      <object>objects\objMushroomRight</object>
+      <object>objects\objMushroomBotRight</object>
+      <object>objects\objMushroomTopRight</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\roomMain</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
