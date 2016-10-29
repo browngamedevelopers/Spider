@@ -6,11 +6,13 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprites name="staticObstacle">
+      <sprite>sprites\sprFlyingEnemy</sprite>
+    </sprites>
     <sprite>sprites\sprFloor</sprite>
     <sprite>sprites\sprPlayer</sprite>
     <sprite>sprites\sprVine</sprite>
     <sprite>sprites\sprMouse</sprite>
-    <sprite>sprites\sprFlyingEnemy</sprite>
     <sprite>sprites\sprCrawlingEnemy</sprite>
     <sprite>sprites\sprRaindrop</sprite>
     <sprite>sprites\sprCanHook</sprite>
@@ -26,6 +28,18 @@
       <sprite>sprites\sprMushroomTopRight</sprite>
       <sprite>sprites\sprMushroomBotRight</sprite>
     </sprites>
+    <sprite>sprites\sprite21</sprite>
+    <sprites name="Moss">
+      <sprite>sprites\sprMossTopLeft</sprite>
+      <sprite>sprites\sprMossTop</sprite>
+      <sprite>sprites\sprMossTopRight</sprite>
+      <sprite>sprites\sprMossLeft</sprite>
+      <sprite>sprites\sprMossMiddle</sprite>
+      <sprite>sprites\sprMossRight</sprite>
+      <sprite>sprites\sprMossBotLeft</sprite>
+      <sprite>sprites\sprMossBottom</sprite>
+      <sprite>sprites\sprMossBotRight</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -34,7 +48,6 @@
     <script>scripts\vectorMagnitude.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\objFloor</object>
     <object>objects\objVine</object>
     <object>objects\objRaindrop</object>
     <object>objects\objWeb</object>
@@ -54,6 +67,18 @@
       <object>objects\objMushroomRight</object>
       <object>objects\objMushroomBotRight</object>
       <object>objects\objMushroomTopRight</object>
+    </objects>
+    <objects name="Moss">
+      <object>objects\objFloor</object>
+      <object>objects\objMossTopLeft</object>
+      <object>objects\objMossTop</object>
+      <object>objects\objMossTopRight</object>
+      <object>objects\objMossLeft</object>
+      <object>objects\objMossMiddle</object>
+      <object>objects\objMossRight</object>
+      <object>objects\objMossBotLeft</object>
+      <object>objects\objMossBottom</object>
+      <object>objects\objMossBotRight</object>
     </objects>
   </objects>
   <rooms name="rooms">

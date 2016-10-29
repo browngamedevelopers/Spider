@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>/// Initialize Variables
 
+grav = 1.0; 
 hsp = 1;
 vsp =  0; 
 moveSpeed = 5;
@@ -53,12 +54,12 @@ moveSpeed = 5;
           <argument>
             <kind>1</kind>
             <string>// v Collisions 
-if (!place_meeting(x + hsp*24, y - 10, objFloor)) { 
+if (!place_meeting(x + hsp*32, y, objFloor)) { 
     hsp *= -1; 
 }
 
 // h Collisions
-if (place_meeting(x + hsp*10, y + 10, objFloor)) { 
+if (place_meeting(x + hsp, y + 10, objFloor)) { 
     hsp *= -1;
 } 
 
