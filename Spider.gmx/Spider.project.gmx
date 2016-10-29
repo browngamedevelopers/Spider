@@ -34,6 +34,7 @@
     <object>objects\objEnemyParent</object>
     <object>objects\objPlayer</object>
     <object>objects\objMushroom</object>
+    <object>objects\objPause</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
