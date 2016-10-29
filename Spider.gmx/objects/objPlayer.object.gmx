@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>/// Setup crosshair
-
 cursor_sprite = sprMouse;
 window_set_cursor(cr_none);
 </string>
@@ -65,7 +64,7 @@ gravWhenFalling = 50;
 isSwinging = false;
 isShooting = false;
 onVine = false;
-previousVineX = -1;;
+previousVineX = -1;
 web = noone;
 joint = noone;
 thetaSpeed = 0;
@@ -115,7 +114,7 @@ if (mouseDown) {
 
         web = instance_create(x, y, objWeb);
          
-        with (web) {
+        with(web){
             // physics_apply_local_impulse(0, 0, 100 * directionX, 100 * directionY);
             phy_speed_x = 1000 * directionX;
             phy_speed_y = 1000 * directionY;
@@ -261,8 +260,6 @@ if (not onVine){
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="4" ename="objEnemyParent">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -279,9 +276,22 @@ if (not onVine){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Collision with Enemy (death)
+            <string>/// Collision with enemy
 
-show_message("dead");
+// manual collision checking is needed for physics and
+// non-physics objects needed
+if(collision_rectangle(phy_position_x - sprite_width / 2, phy_position_y - sprite_width / 2, 
+                       phy_position_x + sprite_width / 2, phy_position_y + sprite_width / 2, 
+                       objEnemyParent, false, false)){
+    show_message("dead");
+}
+
+// manual collision checking for raindrop
+if(collision_rectangle(phy_position_x - sprite_width / 2, phy_position_y - sprite_width / 2, 
+                       phy_position_x + sprite_width / 2, phy_position_y + sprite_width / 2, 
+                       objRaindrop, false, false)){
+    show_message("dead");
+}
 </string>
           </argument>
         </arguments>
