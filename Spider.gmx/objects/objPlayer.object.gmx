@@ -58,6 +58,8 @@ webSpeed = 5;
 moveSpeed = 5;
 moveSpeedHorizontal = 2;
 climbRate = 2;
+gravWhenSwinging = 100;
+gravWhenFalling = 50;
 
 // Internal constants
 isSwinging = false;
@@ -73,7 +75,7 @@ vsp = 0;
 
 phy_fixed_rotation = true;
 physics_world_update_speed(90);
-
+physics_world_gravity(0, gravWhenSwinging);
 </string>
           </argument>
         </arguments>
@@ -101,10 +103,9 @@ physics_world_update_speed(90);
 var mouseDown = device_mouse_check_button(0, mb_left);
 
 // fire if the mouse is clicked in range over block
-if (mouseDown) { //and instance_position(mouse_x, mouse_y, objFloor)) {    
-    // and distance_to_object(objPlayer) &lt; maxWebLength 
-    // create a web towards x and y from the spider
+if (mouseDown) {
     if (not isShooting and not isSwinging) {
+        physics_world_gravity(0, gravWhenSwinging);
     
         var targetX = mouse_x - x; 
         var targetY = mouse_y - y;
@@ -135,6 +136,7 @@ if (mouseDown) { //and instance_position(mouse_x, mouse_y, objFloor)) {
             instance_destroy();
         }   
     }
+    physics_world_gravity(0, gravWhenFalling);
 
     isSwinging = false;
     isShooting = false;
