@@ -15,6 +15,7 @@
     <sprite>sprites\sprRaindrop</sprite>
     <sprite>sprites\sprCanHook</sprite>
     <sprite>sprites\sprWeb</sprite>
+    <sprite>sprites\sprMushroom</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -32,6 +33,7 @@
     <object>objects\objCanHook</object>
     <object>objects\objEnemyParent</object>
     <object>objects\objPlayer</object>
+    <object>objects\objMushroom</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
