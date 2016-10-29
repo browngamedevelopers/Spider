@@ -62,7 +62,6 @@ climbRate = 2;
 // Internal constants
 isSwinging = false;
 isShooting = false;
-mouseDown = false;
 onVine = false;
 previousVineX = -1;;
 web = noone;
@@ -99,19 +98,10 @@ physics_world_update_speed(90);
             <kind>1</kind>
             <string>/// Web Shooting
 
-
-// check if mouse button is pressed
-if(device_mouse_check_button_pressed(0, mb_left)){
-    mouseDown = true;
-}
-
-// if mouse is let go
-if(not device_mouse_check_button(0, mb_left)){
-    mouseDown = false;
-}
+var mouseDown = device_mouse_check_button(0, mb_left);
 
 // fire if the mouse is clicked in range over block
-if(mouseDown){ //and instance_position(mouse_x, mouse_y, objFloor)) { 
+if (mouseDown) { //and instance_position(mouse_x, mouse_y, objFloor)) {    
     // and distance_to_object(objPlayer) &lt; maxWebLength 
     // create a web towards x and y from the spider
     if (not isShooting and not isSwinging) {
@@ -135,6 +125,7 @@ if(mouseDown){ //and instance_position(mouse_x, mouse_y, objFloor)) {
     }
      
 } else { // If mouse is not held down
+
     // Destroy web and joint after letting go of mouse
     if (isSwinging or isShooting) {
         if (joint) {
@@ -147,7 +138,6 @@ if(mouseDown){ //and instance_position(mouse_x, mouse_y, objFloor)) {
 
     isSwinging = false;
     isShooting = false;
-    mouseDown = false;
 }
 
 
@@ -248,7 +238,7 @@ if (not onVine){
     if (not isSwinging and not isShooting) { 
         // vsp += grav;
         
-        phy_speed_x = moveH * moveSpeedHorizontal;
+        // phy_speed_x = moveH * moveSpeedHorizontal;
         
         
         // Vine collision

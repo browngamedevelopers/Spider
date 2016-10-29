@@ -43,7 +43,6 @@
     <object>objects\objEnemyParent</object>
     <object>objects\objFlyingEnemy</object>
     <object>objects\objPlayer</object>
-    <object>objects\objPause</object>
     <objects name="Mushroom">
       <object>objects\objMushroom</object>
       <object>objects\objMushroomLeft</object>
