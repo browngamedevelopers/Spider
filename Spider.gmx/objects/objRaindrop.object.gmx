@@ -53,7 +53,9 @@ moveSpeed = 20;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//show_debug_message(hsp);
+            <string>if (global.pause) exit;
+
+//show_debug_message(hsp);
 //show_debug_message(vsp);
 x += hsp;
 y += vsp + y/850;

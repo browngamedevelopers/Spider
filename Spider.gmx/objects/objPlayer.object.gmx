@@ -52,7 +52,7 @@ window_set_cursor(cr_none);
 
 
 // Gameplay constants
-grav = 0.3;   
+grav = 0.3;
 webSpeed = 5;
 moveSpeed = 5;
 moveSpeedHorizontal = 2;
@@ -70,8 +70,8 @@ web = noone;
 joint = noone;
 thetaSpeed = 0;
 depth = -999;
-hsp = 0; 
-vsp = 0; 
+hsp = 0;
+vsp = 0;
 
 phy_fixed_rotation = true;
 physics_world_update_speed(90);
@@ -99,7 +99,7 @@ physics_world_gravity(0, gravWhenSwinging);
           <argument>
             <kind>1</kind>
             <string>/// Web Shooting
-
+            
 if(device_mouse_check_button_pressed(0, mb_left)){
     mouseDown = true;
 }
@@ -107,30 +107,32 @@ if(device_mouse_check_button_pressed(0, mb_left)){
 if(not device_mouse_check_button(0, mb_left)){
     mouseDown = false;
 }
+if (global.pause) exit;
+
 
 // fire if the mouse is clicked in range over block
 if (mouseDown) {
     if (not isShooting and not isSwinging) {
         physics_world_gravity(0, gravWhenSwinging);
-    
-        var targetX = mouse_x - x; 
+
+        var targetX = mouse_x - x;
         var targetY = mouse_y - y;
         var targetMagnitude = vectorMagnitude(targetX, targetY);
         var directionX = targetX / targetMagnitude;
         var directionY = targetY / targetMagnitude;
 
         web = instance_create(x, y, objWeb);
-         
+
         with(web){
             // physics_apply_local_impulse(0, 0, 100 * directionX, 100 * directionY);
             phy_speed_x = 1000 * directionX;
             phy_speed_y = 1000 * directionY;
         }
-        
+
         isShooting = true;
         onVine = false;
     }
-     
+
 } else { // If mouse is not held down
 
     // Destroy web and joint after letting go of mouse
@@ -140,7 +142,7 @@ if (mouseDown) {
         }
         with(web) {
             instance_destroy();
-        }   
+        }
     }
     physics_world_gravity(0, gravWhenFalling);
 
@@ -177,7 +179,9 @@ if (mouseDown) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Web climbing 
+            <string>/// Web climbing
+
+if (global.pause) exit;
 
 if (isSwinging) {
     var kUp = keyboard_check(vk_up) || keyboard_check(ord('W'));
@@ -186,17 +190,17 @@ if (isSwinging) {
     // Vector from player to pivot
     var webVectorX = (web.x - x);
     var webVectorY = (y - web.y);
-    
+
     // Angle and length of webVector
     var theta = atan2(webVectorX, webVectorY);
     var webLength = vectorMagnitude(webVectorX, webVectorY);
 
     // Climbing up web
     webLength = webLength - kUp * climbRate + kDown * climbRate;
-    
+
     phy_position_x = web.x - webLength * cos(theta);
     phy_position_y = web.y + webLength * sin(theta);
-    
+
     physics_joint_delete(joint);
     joint = physics_joint_rope_create(self, objFloor,
         x, y, web.x, web.y, webLength, false);
@@ -223,9 +227,11 @@ if (isSwinging) {
             <kind>1</kind>
             <string>/// Movement
 
-// Get input 
-var kLeft = -(keyboard_check(vk_left) || keyboard_check(ord('A'))); 
-var kRight = keyboard_check(vk_right) || keyboard_check(ord('D')); 
+if (global.pause) exit;
+
+// Get input
+var kLeft = -(keyboard_check(vk_left) || keyboard_check(ord('A')));
+var kRight = keyboard_check(vk_right) || keyboard_check(ord('D'));
 var kUp = -(keyboard_check(vk_up) || keyboard_check(ord('W')));
 var kDown = keyboard_check(vk_down) || keyboard_check(ord('S'));
 var escape = keyboard_check(vk_escape);
@@ -235,20 +241,20 @@ if(escape){
     game_end();
 }
 
-// Use input 
-moveH = kLeft + kRight; 
+// Use input
+moveH = kLeft + kRight;
 moveV = kUp + kDown;
 
 // Normal movement if not on vine
 if (not onVine){
     //hsp = moveH * moveSpeed;
-    // Falling   
-    if (not isSwinging and not isShooting) { 
+    // Falling
+    if (not isSwinging and not isShooting) {
         // vsp += grav;
-        
+
         // phy_speed_x = moveH * moveSpeedHorizontal;
-        
-        
+
+
         // Vine collision
         // if (place_meeting(x + hsp, y + vsp, objVine)){
             // onVine = true;
@@ -258,7 +264,7 @@ if (not onVine){
     }
 
 // Movement on Vine
-} // else if ((not isSwinging) and onVine) { 
+} // else if ((not isSwinging) and onVine) {
   //  vsp = moveV * moveSpeed;
 // }
 
@@ -287,15 +293,15 @@ if (not onVine){
 
 // manual collision checking is needed for physics and
 // non-physics objects needed
-if(collision_rectangle(phy_position_x - sprite_width / 2, phy_position_y - sprite_width / 2, 
-                       phy_position_x + sprite_width / 2, phy_position_y + sprite_width / 2, 
+if(collision_rectangle(phy_position_x - sprite_width / 2, phy_position_y - sprite_width / 2,
+                       phy_position_x + sprite_width / 2, phy_position_y + sprite_width / 2,
                        objEnemyParent, false, false)){
     show_message("dead");
 }
 
 // manual collision checking for raindrop
-if(collision_rectangle(phy_position_x - sprite_width / 2, phy_position_y - sprite_width / 2, 
-                       phy_position_x + sprite_width / 2, phy_position_y + sprite_width / 2, 
+if(collision_rectangle(phy_position_x - sprite_width / 2, phy_position_y - sprite_width / 2,
+                       phy_position_x + sprite_width / 2, phy_position_y + sprite_width / 2,
                        objRaindrop, false, false)){
     show_message("dead");
 }
