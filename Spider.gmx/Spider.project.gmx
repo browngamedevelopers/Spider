@@ -41,6 +41,7 @@
       <sprite>sprites\sprMossBotRight</sprite>
     </sprites>
     <sprite>sprites\sprMenu</sprite>
+    <sprite>sprites\sprSurfaceNongrippable</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -82,6 +83,7 @@
       <object>objects\objMossBotRight</object>
     </objects>
     <object>objects\objPause</object>
+    <object>objects\objSurfaceNongrippable</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInitialize</room>
