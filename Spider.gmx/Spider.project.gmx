@@ -21,6 +21,7 @@
       <sprite>sprites\sprMushroomRight</sprite>
       <sprite>sprites\sprMushroomTopRight</sprite>
       <sprite>sprites\sprMushroomBotRight</sprite>
+      <sprite>sprites\sprMushroomStem</sprite>
     </sprites>
     <sprites name="Moss">
       <sprite>sprites\sprMossTopLeft</sprite>
@@ -66,6 +67,7 @@
       <object>objects\objMushroomRight</object>
       <object>objects\objMushroomBotRight</object>
       <object>objects\objMushroomTopRight</object>
+      <object>objects\objMushroomStem</object>
     </objects>
     <objects name="Moss">
       <object>objects\objFloor</object>

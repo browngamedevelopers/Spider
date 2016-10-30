@@ -25,29 +25,6 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Setup crosshair
-cursor_sprite = sprMouse;
-window_set_cursor(cr_none);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>/// Initialize Variables
 
 
@@ -72,9 +49,35 @@ depth = -999;
 hsp = 0; 
 vsp = 0; 
 
+image_speed = 0.25;
 phy_fixed_rotation = true;
 physics_world_update_speed(90);
 physics_world_gravity(0, gravWhenSwinging);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Setup crosshair
+cursor_sprite = sprMouse;
+window_set_cursor(cr_none);
 </string>
           </argument>
         </arguments>
@@ -360,9 +363,9 @@ if(collision_rectangle(phy_position_x - sprite_width / 2, phy_position_y - sprit
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>0,0</point>
-    <point>50,0</point>
-    <point>50,50</point>
-    <point>0,50</point>
+    <point>16,32</point>
+    <point>128,32</point>
+    <point>128,112</point>
+    <point>16,112</point>
   </PhysicsShapePoints>
 </object>
