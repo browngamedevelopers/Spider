@@ -6,15 +6,9 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprites name="staticObstacle">
-      <sprite>sprites\sprFlyingEnemy</sprite>
-    </sprites>
-    <sprite>sprites\sprFloor</sprite>
     <sprite>sprites\sprPlayer</sprite>
     <sprite>sprites\sprVine</sprite>
     <sprite>sprites\sprMouse</sprite>
-    <sprite>sprites\sprCrawlingEnemy</sprite>
-    <sprite>sprites\sprRaindrop</sprite>
     <sprite>sprites\sprCanHook</sprite>
     <sprite>sprites\sprWeb</sprite>
     <sprites name="Mushroom">
@@ -28,7 +22,6 @@
       <sprite>sprites\sprMushroomTopRight</sprite>
       <sprite>sprites\sprMushroomBotRight</sprite>
     </sprites>
-    <sprite>sprites\sprite21</sprite>
     <sprites name="Moss">
       <sprite>sprites\sprMossTopLeft</sprite>
       <sprite>sprites\sprMossTop</sprite>
@@ -42,7 +35,12 @@
     </sprites>
     <sprite>sprites\sprMenu</sprite>
     <sprite>sprites\sprSurfaceNongrippable</sprite>
-    <sprite>sprites\sprSpike</sprite>
+    <sprites name="Enemies">
+      <sprite>sprites\sprSpike</sprite>
+      <sprite>sprites\sprRaindrop</sprite>
+      <sprite>sprites\sprCrawlingEnemy</sprite>
+      <sprite>sprites\sprFlyingEnemy</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
