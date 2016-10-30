@@ -42,8 +42,11 @@
     </sprites>
     <sprite>sprites\sprMenu</sprite>
     <sprite>sprites\sprSurfaceNongrippable</sprite>
+    <sprite>sprites\sprSpike</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\atan2.gml</script>
@@ -51,12 +54,8 @@
   </scripts>
   <objects name="objects">
     <object>objects\objVine</object>
-    <object>objects\objRaindrop</object>
     <object>objects\objWeb</object>
-    <object>objects\objCrawlingEnemy</object>
     <object>objects\objCanHook</object>
-    <object>objects\objEnemyParent</object>
-    <object>objects\objFlyingEnemy</object>
     <object>objects\objPlayer</object>
     <objects name="Mushroom">
       <object>objects\objMushroom</object>
@@ -84,6 +83,13 @@
     </objects>
     <object>objects\objPause</object>
     <object>objects\objSurfaceNongrippable</object>
+    <objects name="Enemies">
+      <object>objects\objEnemyParent</object>
+      <object>objects\objFlyingEnemy</object>
+      <object>objects\objRaindrop</object>
+      <object>objects\objCrawlingEnemy</object>
+      <object>objects\objSpike</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInitialize</room>
