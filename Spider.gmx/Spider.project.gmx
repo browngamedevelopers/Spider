@@ -84,9 +84,8 @@
     <object>objects\objPause</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\roomMain</room>
     <room>rooms\roomInitialize</room>
-    <room>rooms\room0</room>
+    <room>rooms\roomMain</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
