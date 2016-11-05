@@ -43,6 +43,12 @@
       <sprite>sprites\sprFlyingEnemy</sprite>
     </sprites>
     <sprite>sprites\sprGoal</sprite>
+    <sprites name="Vine">
+      <sprite>sprites\sprVineBottom</sprite>
+      <sprite>sprites\sprVineLeft</sprite>
+      <sprite>sprites\sprVineRight</sprite>
+      <sprite>sprites\sprVineCross</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -92,6 +98,12 @@
       <object>objects\objSpike</object>
     </objects>
     <object>objects\objGoal</object>
+    <objects name="objVine">
+      <object>objects\objVineBottom</object>
+      <object>objects\objVineRight</object>
+      <object>objects\objVineLeft</object>
+      <object>objects\objVineCross</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInitialize</room>
