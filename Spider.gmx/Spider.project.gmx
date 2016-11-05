@@ -6,7 +6,6 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sprPlayer</sprite>
     <sprite>sprites\sprVine</sprite>
     <sprite>sprites\sprMouse</sprite>
     <sprite>sprites\sprCanHook</sprite>
@@ -49,6 +48,10 @@
       <sprite>sprites\sprVineRight</sprite>
       <sprite>sprites\sprVineCross</sprite>
     </sprites>
+    <sprites name="Player">
+      <sprite>sprites\sprSpiderDead</sprite>
+      <sprite>sprites\sprPlayer</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -57,6 +60,7 @@
   <scripts name="scripts">
     <script>scripts\atan2.gml</script>
     <script>scripts\vectorMagnitude.gml</script>
+    <script>scripts\spiderDie.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objVine</object>
@@ -104,6 +108,7 @@
       <object>objects\objVineLeft</object>
       <object>objects\objVineCross</object>
     </objects>
+    <object>objects\objSpiderDead</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInitialize</room>

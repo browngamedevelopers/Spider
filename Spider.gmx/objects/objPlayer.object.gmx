@@ -362,25 +362,27 @@ else{
 
 // manual collision checking is needed for physics and
 // non-physics objects needed
-if(collision_ellipse(phy_position_x - 72, phy_position_y - 43, 
-                       phy_position_x + 35, phy_position_y + 37, 
-                       objEnemyParent, false, false)){
-    show_message("dead");
-}
+if (instance_exists(objPlayer)) {
 
-// Collision with fly
-if(collision_ellipse(phy_position_x - 72, phy_position_y - 43, 
-                       phy_position_x + 35, phy_position_y + 37, 
-                       objFlyingEnemy, false, false)){
-    show_message("dead");
-}
-
-// manual collision checking for raindrop
-if(collision_ellipse(phy_position_x - 72, phy_position_y - 43, 
-                       phy_position_x + 35, phy_position_y + 37, 
-                       objRaindrop, false, false)){
-    show_message("dead");
-
+    if (collision_ellipse(phy_position_x - 72, phy_position_y - 43, 
+                           phy_position_x + 35, phy_position_y + 37, 
+                           objEnemyParent, false, false)) {
+        spiderDie();
+    }
+    
+    // Collision with fly
+    if (collision_ellipse(phy_position_x - 72, phy_position_y - 43, 
+                           phy_position_x + 35, phy_position_y + 37, 
+                           objFlyingEnemy, false, false)) {
+        spiderDie();
+    }
+    
+    // manual collision checking for raindrop
+    if (collision_ellipse(phy_position_x - 72, phy_position_y - 43, 
+                           phy_position_x + 35, phy_position_y + 37, 
+                           objRaindrop, false, false)) {
+        spiderDie();
+    }  
 }
 </string>
           </argument>
