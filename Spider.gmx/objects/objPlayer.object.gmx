@@ -337,7 +337,7 @@ if(collision_ellipse(phy_position_x - 72, phy_position_y - 43,
             <kind>1</kind>
             <string>/// On floor
 
-if (place_meeting(x, y + 2, objSurfaceNongrippable)) {
+if (place_meeting(x, y + 5, objSurfaceNongrippable)) {
     show_debug_message("Landed on floor");
     speedOnRelease = 0;
 }
