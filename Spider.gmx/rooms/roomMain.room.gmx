@@ -344,6 +344,12 @@
     <instance objName="objMushroomStem" x="1088" y="768" name="inst_15C034BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMushroomBottom" x="1088" y="768" name="inst_214CBE3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGoal" x="1344" y="352" name="inst_CEC5327C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objVineBottom" x="1344" y="544" name="inst_CB9EEA68" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objVineRight" x="1376" y="544" name="inst_1D92A491" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objVineCross" x="1312" y="544" name="inst_A1676985" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objVineBottom" x="1280" y="544" name="inst_CC73D104" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objVineBottom" x="1248" y="544" name="inst_C60CF288" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objVineLeft" x="1216" y="544" name="inst_A9548818" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
