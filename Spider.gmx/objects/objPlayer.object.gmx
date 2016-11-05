@@ -43,6 +43,9 @@ isShooting = false;
 canShoot = true;
 onVine = false;
 previousVineX = -1;
+imageStart = 8;
+imageEnd = 8;
+image_speed = .2;
 web = noone;
 joint = noone;
 thetaSpeed = 0;
@@ -275,8 +278,28 @@ if(escape){
 moveH = kLeft + kRight; 
 moveV = kUp + kDown;
 
-if (not isSwinging and not isShooting) {
+if(not isSwinging and not isShooting){
     phy_speed_x = speedOnRelease + moveH * moveSpeed;
+    image_speed = .2;
+    if(phy_speed_x &gt; 0){
+        imageStart = 8;
+        imageEnd = 15;
+    }
+    
+    else if(phy_speed_x &lt; 0){
+        imageStart = 0;
+        imageEnd = 7;
+    }
+    
+    else{
+        imageEnd = imageStart + 1;
+    }
+    
+    image_index = max(imageStart, image_index mod imageEnd);
+}
+
+if(isSwinging){
+    image_speed = 0;
 }
 
 </string>
@@ -338,7 +361,6 @@ if(collision_ellipse(phy_position_x - 72, phy_position_y - 43,
             <string>/// On floor
 
 if (place_meeting(x, y + 5, objSurfaceNongrippable)) {
-    show_debug_message("Landed on floor");
     speedOnRelease = 0;
 }
 </string>

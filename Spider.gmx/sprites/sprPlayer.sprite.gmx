@@ -28,5 +28,13 @@
     <frame index="5">images\sprPlayer_5.png</frame>
     <frame index="6">images\sprPlayer_6.png</frame>
     <frame index="7">images\sprPlayer_7.png</frame>
+    <frame index="8">images\sprPlayer_8.png</frame>
+    <frame index="9">images\sprPlayer_9.png</frame>
+    <frame index="10">images\sprPlayer_10.png</frame>
+    <frame index="11">images\sprPlayer_11.png</frame>
+    <frame index="12">images\sprPlayer_12.png</frame>
+    <frame index="13">images\sprPlayer_13.png</frame>
+    <frame index="14">images\sprPlayer_14.png</frame>
+    <frame index="15">images\sprPlayer_15.png</frame>
   </frames>
 </sprite>
