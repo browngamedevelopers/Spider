@@ -50,6 +50,17 @@
       <sprite>sprites\sprVineCross</sprite>
     </sprites>
     <sprite>sprites\sprSpiderDead</sprite>
+    <sprites name="Wood">
+      <sprite>sprites\sprWoodTopLeft</sprite>
+      <sprite>sprites\sprWoodTop</sprite>
+      <sprite>sprites\sprWoodTopRight</sprite>
+      <sprite>sprites\sprWoodLeft</sprite>
+      <sprite>sprites\sprWoodMiddle</sprite>
+      <sprite>sprites\sprWoodRight</sprite>
+      <sprite>sprites\sprWoodBotLeft</sprite>
+      <sprite>sprites\sprWoodBottom</sprite>
+      <sprite>sprites\sprWoodBotRight</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -91,7 +102,6 @@
       <object>objects\objMossBotRight</object>
     </objects>
     <object>objects\objPause</object>
-    <object>objects\objSurfaceNongrippable</object>
     <objects name="Enemies">
       <object>objects\objEnemyParent</object>
       <object>objects\objFlyingEnemy</object>
@@ -107,6 +117,18 @@
       <object>objects\objVineCross</object>
     </objects>
     <object>objects\objSpiderDead</object>
+    <objects name="Wood">
+      <object>objects\objSurfaceNongrippable</object>
+      <object>objects\objWoodTopLeft</object>
+      <object>objects\objWoodTop</object>
+      <object>objects\objWoodTopRight</object>
+      <object>objects\objWoodLeft</object>
+      <object>objects\objWoodMiddle</object>
+      <object>objects\objWoodRight</object>
+      <object>objects\objWoodBotLeft</object>
+      <object>objects\objWoodBottom</object>
+      <object>objects\objWoodBotRight</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInitialize</room>
