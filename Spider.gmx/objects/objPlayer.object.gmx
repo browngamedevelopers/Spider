@@ -297,7 +297,7 @@ if(onGround){
     image_index = max(imageStart, image_index mod imageEnd);
 }
 
-if(isSwinging and not onGround){
+if(not onGround){
     image_speed = 0;
 }
 
@@ -323,9 +323,9 @@ if(isSwinging and not onGround){
             <kind>1</kind>
             <string>/// On Floor
 
-var ground = instance_place(x, y + 30, objSurfaceNongrippable);
+var ground = instance_place(x, y + 15, objSurfaceNongrippable);
 if(ground){
-    var horz = (ground.x &gt; phy_position_x - 41) and (ground.x &lt; phy_position_x + 17);
+    var horz = (ground.x &gt;= phy_position_x - 43) and (ground.x &lt;= phy_position_x + 20);
     var vert = (ground.y &gt; phy_position_y + 17);
     if(horz and vert){
         speedOnRelease = 0;

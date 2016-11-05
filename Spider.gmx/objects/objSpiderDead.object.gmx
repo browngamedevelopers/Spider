@@ -93,9 +93,9 @@ room_restart();
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>32,32</point>
-    <point>144,32</point>
-    <point>144,112</point>
-    <point>32,112</point>
+    <point>0,32</point>
+    <point>80,32</point>
+    <point>80,64</point>
+    <point>0,64</point>
   </PhysicsShapePoints>
 </object>

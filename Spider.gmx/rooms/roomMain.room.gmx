@@ -358,7 +358,6 @@
     <instance objName="objWoodBotLeft" x="576" y="384" name="inst_08CDC916" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWoodBotRight" x="672" y="384" name="inst_65236601" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWoodTopRight" x="672" y="96" name="inst_B302B672" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="0" y="0" name="inst_3EAADDE6" locked="0" code="" scaleX="0" scaleY="0" colour="0" rotation="0"/>
     <instance objName="objMossBottom" x="608" y="408" name="inst_5BB37586" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
