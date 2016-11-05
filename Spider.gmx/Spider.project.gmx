@@ -42,6 +42,7 @@
       <sprite>sprites\sprCrawlingEnemy</sprite>
       <sprite>sprites\sprFlyingEnemy</sprite>
     </sprites>
+    <sprite>sprites\sprGoal</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -90,6 +91,7 @@
       <object>objects\objCrawlingEnemy</object>
       <object>objects\objSpike</object>
     </objects>
+    <object>objects\objGoal</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInitialize</room>

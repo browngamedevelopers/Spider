@@ -322,21 +322,10 @@ if(isSwinging){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Collision with enemy
+            <string>/// On floor
 
-// manual collision checking is needed for physics and
-// non-physics objects needed
-if(collision_ellipse(phy_position_x - 72, phy_position_y - 43, 
-                       phy_position_x + 35, phy_position_y + 37, 
-                       objEnemyParent, false, false)){
-    show_message("dead");
-}
-
-// manual collision checking for raindrop
-if(collision_ellipse(phy_position_x - 72, phy_position_y - 43, 
-                       phy_position_x + 35, phy_position_y + 37, 
-                       objRaindrop, false, false)){
-    show_message("dead");
+if (place_meeting(x, y + 5, objSurfaceNongrippable)) {
+    speedOnRelease = 0;
 }
 </string>
           </argument>
@@ -358,10 +347,22 @@ if(collision_ellipse(phy_position_x - 72, phy_position_y - 43,
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// On floor
+            <string>/// Collision with enemy
 
-if (place_meeting(x, y + 5, objSurfaceNongrippable)) {
-    speedOnRelease = 0;
+// manual collision checking is needed for physics and
+// non-physics objects needed
+if(collision_ellipse(phy_position_x - 72, phy_position_y - 43, 
+                       phy_position_x + 35, phy_position_y + 37, 
+                       objEnemyParent, false, false)){
+    show_message("dead");
+}
+
+// manual collision checking for raindrop
+if(collision_ellipse(phy_position_x - 72, phy_position_y - 43, 
+                       phy_position_x + 35, phy_position_y + 37, 
+                       objRaindrop, false, false)){
+    show_message("dead");
+
 }
 </string>
           </argument>
@@ -386,29 +387,6 @@ if (place_meeting(x, y + 5, objSurfaceNongrippable)) {
           <argument>
             <kind>1</kind>
             <string>Allow collisions with nongrippable surface</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objFloor">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>// Collide with floor
-</string>
           </argument>
         </arguments>
       </action>
