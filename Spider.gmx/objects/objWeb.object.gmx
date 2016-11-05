@@ -51,25 +51,12 @@ maxLength = 750;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Collisions
-
-// Enemy object collision
-var collideEnemy = collision_line(x, y, objPlayer.x, objPlayer.y, objEnemyParent, false, false);
-var collideWallNongrippable = collision_line(x, y, objPlayer.x, objPlayer.y, objSurfaceNongrippable, false, false);
-
-if (collideEnemy or collideWallNongrippable) {
-    with (objPlayer){
-        isSwinging = false;
-        isShooting = false;
-        mouseDown = false;
-        physics_joint_delete(joint);
-    }
-    
-    instance_destroy();
+            <string>/// Set max distance
+var distance = point_distance(objPlayer.x, objPlayer.y, x, y);
+if(distance &gt; maxLength){
+    phy_speed_x = 0;
+    phy_speed_y = 0;
 }
-
-// Collision with Walls 
-
 </string>
           </argument>
         </arguments>
@@ -90,12 +77,27 @@ if (collideEnemy or collideWallNongrippable) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Set max distance
-var distance = point_distance(objPlayer.x, objPlayer.y, x, y);
-if(distance &gt; maxLength){
-    phy_speed_x = 0;
-    phy_speed_y = 0;
+            <string>/// Collisions
+
+// Enemy object collision
+var collideEnemy = collision_line(x, y, objPlayer.x, objPlayer.y, objEnemyParent, false, false);
+var collideWallNongrippable = collision_line(x, y, objPlayer.x, objPlayer.y, objSurfaceNongrippable, false, false);
+
+if (collideEnemy or collideWallNongrippable) {
+    with (objPlayer){
+        isSwinging = false;
+        isShooting = false;
+        mouseDown = false;
+        canShoot = false;
+        alarm[0] = room_speed * 2;
+        physics_joint_delete(joint);
+    }
+    
+    instance_destroy();
 }
+
+// Collision with Walls 
+
 </string>
           </argument>
         </arguments>
