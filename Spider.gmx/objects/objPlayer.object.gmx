@@ -150,15 +150,12 @@ if(mouseDown and canShoot){
         web = instance_create(x, y, objWeb);
          
         with(web){
-            // physics_apply_local_impulse(0, 0, 100 * directionX, 100 * directionY);
             phy_speed_x = 1000 * directionX;
             phy_speed_y = 1000 * directionY;
         }
         
         isShooting = true;
         onVine = false;
-        //canShoot = false;
-        //show_debug_message("canShoot set to false");
     }
      
 }
@@ -279,7 +276,7 @@ if(escape){
 moveH = kLeft + kRight; 
 moveV = kUp + kDown;
 
-if(onGround){ //(not isSwinging and not isShooting){
+if(onGround){
     phy_speed_x = speedOnRelease + moveH * moveSpeed;
     image_speed = .2;
     if(phy_speed_x &gt; 0){
@@ -296,10 +293,11 @@ if(onGround){ //(not isSwinging and not isShooting){
         imageEnd = imageStart + 1;
     }
     
+    show_debug_message(string(speedOnRelease) + " " + string(moveH) + " " + string(moveSpeed));
     image_index = max(imageStart, image_index mod imageEnd);
 }
 
-if(isSwinging || not onGround){
+if(isSwinging and not onGround){
     image_speed = 0;
 }
 
@@ -325,10 +323,10 @@ if(isSwinging || not onGround){
             <kind>1</kind>
             <string>/// On Floor
 
-var ground = instance_place(x, y + 5, objSurfaceNongrippable);
+var ground = instance_place(x, y + 30, objSurfaceNongrippable);
 if(ground){
-    var horz = (ground.x &gt; phy_position_x - 72) and (ground.x &lt; phy_position_x + 35);
-    var vert = (ground.y &gt; phy_position_y + 43);
+    var horz = (ground.x &gt; phy_position_x - 41) and (ground.x &lt; phy_position_x + 17);
+    var vert = (ground.y &gt; phy_position_y + 17);
     if(horz and vert){
         speedOnRelease = 0;
         onGround = true;
@@ -363,23 +361,22 @@ else{
 // manual collision checking is needed for physics and
 // non-physics objects needed
 if (instance_exists(objPlayer)) {
-
-    if (collision_ellipse(phy_position_x - 72, phy_position_y - 43, 
-                           phy_position_x + 35, phy_position_y + 37, 
+    if (collision_ellipse(phy_position_x - 41, phy_position_y - 23, 
+                           phy_position_x + 17, phy_position_y + 17, 
                            objEnemyParent, false, false)) {
         spiderDie();
     }
     
     // Collision with fly
-    if (collision_ellipse(phy_position_x - 72, phy_position_y - 43, 
-                           phy_position_x + 35, phy_position_y + 37, 
+    if (collision_ellipse(phy_position_x - 41, phy_position_y - 23, 
+                           phy_position_x + 17, phy_position_y + 17, 
                            objFlyingEnemy, false, false)) {
         spiderDie();
     }
     
     // manual collision checking for raindrop
-    if (collision_ellipse(phy_position_x - 72, phy_position_y - 43, 
-                           phy_position_x + 35, phy_position_y + 37, 
+    if (collision_ellipse(phy_position_x - 41, phy_position_y - 23, 
+                           phy_position_x + 17, phy_position_y + 17, 
                            objRaindrop, false, false)) {
         spiderDie();
     }  
@@ -424,9 +421,9 @@ if (instance_exists(objPlayer)) {
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>16,32</point>
-    <point>128,32</point>
-    <point>128,112</point>
-    <point>16,112</point>
+    <point>0,16</point>
+    <point>80,16</point>
+    <point>80,64</point>
+    <point>0,64</point>
   </PhysicsShapePoints>
 </object>
