@@ -6,6 +6,7 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\sprPlayer</sprite>
     <sprite>sprites\sprVine</sprite>
     <sprite>sprites\sprMouse</sprite>
     <sprite>sprites\sprCanHook</sprite>
@@ -48,10 +49,7 @@
       <sprite>sprites\sprVineRight</sprite>
       <sprite>sprites\sprVineCross</sprite>
     </sprites>
-    <sprites name="Player">
-      <sprite>sprites\sprSpiderDead</sprite>
-      <sprite>sprites\sprPlayer</sprite>
-    </sprites>
+    <sprite>sprites\sprSpiderDead</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
