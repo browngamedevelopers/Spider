@@ -47,6 +47,7 @@ previousVineX = -1;
 imageStart = 8;
 imageEnd = 8;
 image_speed = .2;
+image_index = 8;
 web = noone;
 joint = noone;
 thetaSpeed = 0;
@@ -293,7 +294,6 @@ if(onGround){
         imageEnd = imageStart + 1;
     }
     
-    show_debug_message(string(speedOnRelease) + " " + string(moveH) + " " + string(moveSpeed));
     image_index = max(imageStart, image_index mod imageEnd);
 }
 
@@ -325,9 +325,8 @@ if(not onGround){
 
 var ground = instance_place(x, y + 15, objSurfaceNongrippable);
 if(ground){
-    var horz = (ground.x &gt;= phy_position_x - 43) and (ground.x &lt;= phy_position_x + 20);
     var vert = (ground.y &gt; phy_position_y + 17);
-    if(horz and vert){
+    if(vert){
         speedOnRelease = 0;
         onGround = true;
     }
