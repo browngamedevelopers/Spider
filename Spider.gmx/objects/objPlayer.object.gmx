@@ -47,6 +47,7 @@ previousVineX = -1;
 imageStart = 8;
 imageEnd = 8;
 image_speed = .2;
+image_index = 8;
 web = noone;
 joint = noone;
 thetaSpeed = 0;
@@ -293,7 +294,6 @@ if(onGround){
         imageEnd = imageStart + 1;
     }
     
-    show_debug_message(string(speedOnRelease) + " " + string(moveH) + " " + string(moveSpeed));
     image_index = max(imageStart, image_index mod imageEnd);
 }
 
@@ -324,13 +324,9 @@ if(not onGround){
             <string>/// On Floor
 
 var ground = instance_place(x, y + 15, objSurfaceNongrippable);
-if(ground){
-    var horz = (ground.x &gt;= phy_position_x - 43) and (ground.x &lt;= phy_position_x + 20);
-    var vert = (ground.y &gt; phy_position_y + 17);
-    if(horz and vert){
-        speedOnRelease = 0;
-        onGround = true;
-    }
+if(ground and (ground.y &gt; phy_position_y + 17)){
+    speedOnRelease = 0;
+    onGround = true;
 }
 
 else{
@@ -421,9 +417,9 @@ if (instance_exists(objPlayer)) {
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>0,16</point>
-    <point>80,16</point>
-    <point>80,64</point>
-    <point>0,64</point>
+    <point>12,12</point>
+    <point>72,12</point>
+    <point>72,60</point>
+    <point>12,60</point>
   </PhysicsShapePoints>
 </object>
