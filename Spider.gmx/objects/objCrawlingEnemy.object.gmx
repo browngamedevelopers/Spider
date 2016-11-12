@@ -53,7 +53,7 @@ moveSpeed = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.pause) exit;
+            <string>//if (global.pause) exit;
 
 // v Collisions 
 if (!place_meeting(x + hsp*24, y - 10, objFloor)) { 

@@ -61,6 +61,7 @@
       <sprite>sprites\sprWoodBottom</sprite>
       <sprite>sprites\sprWoodBotRight</sprite>
     </sprites>
+    <sprite>sprites\sprite45</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -80,7 +81,6 @@
       <object>objects\objMushroom</object>
       <object>objects\objMushroomLeft</object>
       <object>objects\objMushroomTopLeft</object>
-      <object>objects\objMushroomBotLeft</object>
       <object>objects\objMushroomMiddle</object>
       <object>objects\objMushroomTop</object>
       <object>objects\objMushroomBottom</object>
@@ -131,7 +131,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\roomInitialize</room>
+    <room>rooms\room1</room>
+    <room>rooms\room2</room>
     <room>rooms\roomMain</room>
   </rooms>
   <help>

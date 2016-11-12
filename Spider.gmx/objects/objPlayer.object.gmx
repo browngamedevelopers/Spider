@@ -31,8 +31,8 @@
 // Gameplay constants
 grav = 0.3;   
 webSpeed = 5;
-moveSpeed = 2;
-moveSpeedHorizontal = 2;
+moveSpeed = 4;
+moveSpeedHorizontal = 4;
 climbRate = 2;
 gravWhenSwinging = 100;
 gravWhenFalling = 50;
@@ -133,7 +133,7 @@ canShoot = true;
             <kind>1</kind>
             <string>/// Web Shooting
 
-if (global.pause) exit;
+//if (global.pause) exit;
 
 var mouseDown =  device_mouse_check_button(0, mb_left);;
 
@@ -213,7 +213,7 @@ if(not mouseDown){
             <kind>1</kind>
             <string>/// Web climbing 
 
-if (global.pause) exit;
+//if (global.pause) exit;
 
 if (isSwinging) {
     var kUp = keyboard_check(vk_up) || keyboard_check(ord('W'));
@@ -259,7 +259,7 @@ if (isSwinging) {
             <kind>1</kind>
             <string>/// Movement
 
-if (global.pause) exit;
+//if (global.pause) exit;
 
 // Get input 
 var kLeft = -(keyboard_check(vk_left) || keyboard_check(ord('A'))); 
@@ -405,6 +405,22 @@ if (instance_exists(objPlayer)) {
             <string>Allow collisions with nongrippable surface</string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objGoal">
+      <action>
+        <libid>1</libid>
+        <id>222</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_next_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
   </events>
