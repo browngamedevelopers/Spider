@@ -301,6 +301,10 @@ if(not onGround){
     image_speed = 0;
 }
 
+if(y &gt; room_height + 100){
+    room_restart();
+}
+
 </string>
           </argument>
         </arguments>
