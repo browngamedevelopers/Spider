@@ -7,9 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sprPlayer</sprite>
-    <sprite>sprites\sprVine</sprite>
     <sprite>sprites\sprMouse</sprite>
-    <sprite>sprites\sprCanHook</sprite>
     <sprite>sprites\sprWeb</sprite>
     <sprites name="Mushroom">
       <sprite>sprites\sprMushroomLeft</sprite>
@@ -42,7 +40,6 @@
       <sprite>sprites\sprCrawlingEnemy</sprite>
       <sprite>sprites\sprFlyingEnemy</sprite>
     </sprites>
-    <sprite>sprites\sprGoal</sprite>
     <sprites name="Vine">
       <sprite>sprites\sprVineBottom</sprite>
       <sprite>sprites\sprVineLeft</sprite>
@@ -61,7 +58,7 @@
       <sprite>sprites\sprWoodBottom</sprite>
       <sprite>sprites\sprWoodBotRight</sprite>
     </sprites>
-    <sprite>sprites\sprite45</sprite>
+    <sprite>sprites\sprGoal</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -73,9 +70,7 @@
     <script>scripts\spiderDie.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\objVine</object>
     <object>objects\objWeb</object>
-    <object>objects\objCanHook</object>
     <object>objects\objPlayer</object>
     <objects name="Mushroom">
       <object>objects\objMushroom</object>

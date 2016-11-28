@@ -31,6 +31,7 @@ grav = 1.0;
 hsp = -1;
 vsp =  0; 
 moveSpeed = 5;
+
 </string>
           </argument>
         </arguments>
@@ -53,22 +54,18 @@ moveSpeed = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if (global.pause) exit;
-
-// v Collisions 
+            <string>// Vertical Collision 
 if (!place_meeting(x + hsp*24, y - 10, objFloor)) { 
     hsp *= -1; 
     image_xscale *= -1;
 }
 
-// h Collisions
+// Horizontal Collision
 if (place_meeting(x + hsp, y + 10, objFloor)) { 
     hsp *= -1;
     image_xscale *= -1;
 } 
 
-//show_debug_message(hsp);
-//show_debug_message(vsp);
 x += hsp;
 y += vsp;
 

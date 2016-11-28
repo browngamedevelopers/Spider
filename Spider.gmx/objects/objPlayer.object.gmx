@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>/// Initialize Variables
 
-
 // Gameplay constants
 grav = 0.3;   
 webSpeed = 5;
@@ -42,11 +41,10 @@ isSwinging = false;
 isShooting = false;
 canShoot = true;
 onGround = true;
-onVine = false;
-previousVineX = -1;
+startX = x;
+startY = y;
 imageStart = 8;
 imageEnd = 8;
-image_speed = .2;
 image_index = 8;
 web = noone;
 joint = noone;
@@ -56,7 +54,6 @@ depth = -999;
 hsp = 0; 
 vsp = 0; 
 
-image_speed = 0.25;
 phy_fixed_rotation = true;
 physics_world_update_speed(90);
 physics_world_gravity(0, gravWhenSwinging);
@@ -277,6 +274,7 @@ if(escape){
 moveH = kLeft + kRight; 
 moveV = kUp + kDown;
 
+// Movement
 if(onGround){
     phy_speed_x = speedOnRelease + moveH * moveSpeed;
     image_speed = .2;
@@ -297,12 +295,14 @@ if(onGround){
     image_index = max(imageStart, image_index mod imageEnd);
 }
 
+// don't animate on vine
 if(not onGround){
     image_speed = 0;
 }
 
+// Fell off platform
 if(y &gt; room_height + 100){
-    room_restart();
+    spiderDie();
 }
 
 </string>
@@ -325,7 +325,7 @@ if(y &gt; room_height + 100){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// On Floor
+            <string>/// Check for Floor Collision
 
 var ground = instance_place(x, y + 15, objSurfaceNongrippable);
 if(ground){
@@ -359,7 +359,7 @@ else{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Collision with enemy
+            <string>/// Collision with enemies
 
 // manual collision checking is needed for physics and
 // non-physics objects needed

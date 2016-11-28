@@ -51,7 +51,8 @@ image_speed = 0;
           <argument>
             <kind>1</kind>
             <string>/// Restart room
-room_restart();
+instance_create(startX, startY, objPlayer);
+instance_destroy();
 </string>
           </argument>
         </arguments>
