@@ -328,7 +328,9 @@ if(y &gt; room_height + 100){
             <string>/// Check for Floor Collision
 
 var ground = instance_place(x, y + 15, objSurfaceNongrippable);
-if(ground){
+var mushroom = place_meeting(x, y + 15, objBounce);
+             
+if(ground || mushroom){
     var vert = (ground.y &gt; phy_position_y + 17);
     if(vert){
         speedOnRelease = 0;
@@ -425,6 +427,31 @@ if (instance_exists(objPlayer)) {
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="4" ename="objBounce">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Bounce
+phy_speed_y -= 5;
+show_debug_message("bouncing");
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
