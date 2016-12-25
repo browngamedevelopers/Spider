@@ -152,16 +152,6 @@
     <instance objName="objFlyingEnemy" x="4672" y="640" name="inst_5078413F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFlyingEnemy" x="4672" y="576" name="inst_C2A984FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFlyingEnemy" x="4672" y="512" name="inst_16ED9D35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMossBottom" x="5280" y="282" name="inst_5C6BC00D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoal" x="5280" y="282" name="inst_97132C5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMossBottom" x="5312" y="282" name="inst_B4492F01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMossBottom" x="5344" y="282" name="inst_369B7CC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMossBottom" x="5376" y="282" name="inst_497A0B18" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMossBottom" x="5408" y="282" name="inst_A10F900C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoal" x="5312" y="282" name="inst_0A038312" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoal" x="5344" y="282" name="inst_0E9FC222" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoal" x="5376" y="282" name="inst_A834870C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoal" x="5408" y="282" name="inst_26D144BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfaceNongrippable" x="104" y="358" name="inst_6BAD62E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfaceNongrippable" x="216" y="358" name="inst_A6F0362D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfaceNongrippable" x="104" y="376" name="inst_D726B393" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -177,7 +167,6 @@
     <instance objName="objSurfaceNongrippable" x="104" y="512" name="inst_F0F06DEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfaceNongrippable" x="216" y="480" name="inst_A5660B9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfaceNongrippable" x="216" y="512" name="inst_A8C28541" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSurfaceNongrippable" x="-2352" y="-992" name="inst_A8778392" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfaceNongrippable" x="128" y="768" name="inst_F0DAD945" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfaceNongrippable" x="160" y="768" name="inst_67D91FE1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfaceNongrippable" x="192" y="768" name="inst_9784AE51" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -238,7 +227,6 @@
     <instance objName="objSurfaceNongrippable" x="864" y="672" name="inst_FE4B18A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfaceNongrippable" x="864" y="704" name="inst_83B774BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfaceNongrippable" x="864" y="736" name="inst_C215CC62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSurfaceNongrippable" x="864" y="768" name="inst_F59919EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfaceNongrippable" x="296" y="32" name="inst_AF94A172" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfaceNongrippable" x="328" y="32" name="inst_E2C109C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfaceNongrippable" x="360" y="32" name="inst_BE2576A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -575,6 +563,11 @@
     <instance objName="objSurfaceNongrippable" x="5424" y="56" name="inst_18B40174" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfaceNongrippable" x="5424" y="24" name="inst_AFB3F038" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfaceNongrippable" x="1032" y="352" name="inst_82A05226" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGoal" x="5288" y="280" name="inst_636A8069" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGoal" x="5320" y="280" name="inst_23AD7408" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGoal" x="5352" y="280" name="inst_D094B8D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGoal" x="5384" y="280" name="inst_1CDBE2B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGoal" x="5416" y="280" name="inst_3CEE2990" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileWood" x="80" y="336" w="32" h="32" xo="32" yo="0" id="10000004" name="inst_6440AED9" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -1872,13 +1865,6 @@
     <tile bgName="tileWood" x="5432" y="752" w="32" h="32" xo="64" yo="128" id="10001396" name="inst_8957F74A" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tileWood" x="5464" y="752" w="32" h="32" xo="64" yo="128" id="10001397" name="inst_B3B0FE15" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tileWood" x="5496" y="752" w="32" h="32" xo="96" yo="128" id="10001398" name="inst_ACE7F7A3" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tileWoodReverse" x="5232" y="240" w="32" h="32" xo="32" yo="128" id="10001399" name="inst_5C09B205" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tileWoodReverse" x="5264" y="240" w="32" h="32" xo="64" yo="128" id="10001400" name="inst_F071BDC4" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tileWoodReverse" x="5296" y="240" w="32" h="32" xo="64" yo="128" id="10001401" name="inst_193AFC05" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tileWoodReverse" x="5328" y="240" w="32" h="32" xo="64" yo="128" id="10001402" name="inst_B479E48A" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tileWoodReverse" x="5360" y="240" w="32" h="32" xo="64" yo="128" id="10001403" name="inst_D6A3B2BC" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tileWoodReverse" x="5392" y="240" w="32" h="32" xo="64" yo="128" id="10001404" name="inst_CAC760FF" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tileWoodReverse" x="5424" y="240" w="32" h="32" xo="96" yo="128" id="10001405" name="inst_C8E05E3A" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tileWoodReverse" x="5232" y="208" w="32" h="32" xo="32" yo="96" id="10001406" name="inst_AA605AB9" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tileWoodReverse" x="5232" y="176" w="32" h="32" xo="32" yo="96" id="10001407" name="inst_4B9A7DC2" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tileWoodReverse" x="5232" y="144" w="32" h="32" xo="32" yo="96" id="10001408" name="inst_EE60068F" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -1935,6 +1921,13 @@
     <tile bgName="tileWoodReverse" x="5328" y="-16" w="32" h="32" xo="64" yo="0" id="10001459" name="inst_C114786C" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tileWoodReverse" x="5360" y="-16" w="32" h="32" xo="64" yo="0" id="10001460" name="inst_30487B10" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tileWoodReverse" x="5392" y="-16" w="32" h="32" xo="64" yo="0" id="10001461" name="inst_82A1538F" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tileWoodReverse" x="5232" y="240" w="32" h="32" xo="32" yo="128" id="10002613" name="inst_C46D26E0" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tileWoodReverse" x="5264" y="240" w="32" h="32" xo="64" yo="128" id="10002614" name="inst_15891F77" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tileWoodReverse" x="5296" y="240" w="32" h="32" xo="64" yo="128" id="10002615" name="inst_1CB0117B" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tileWoodReverse" x="5328" y="240" w="32" h="32" xo="64" yo="128" id="10002616" name="inst_051FE056" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tileWoodReverse" x="5360" y="240" w="32" h="32" xo="64" yo="128" id="10002617" name="inst_9FD0B419" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tileWoodReverse" x="5392" y="240" w="32" h="32" xo="64" yo="128" id="10002618" name="inst_91CF18D4" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tileWoodReverse" x="5424" y="240" w="32" h="32" xo="96" yo="128" id="10002619" name="inst_678E58A4" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>-1</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

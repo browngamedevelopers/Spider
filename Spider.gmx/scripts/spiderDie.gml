@@ -8,7 +8,7 @@ deadSpider.startY = startY;
 
 if(web != noone){
     with(web){
-        instance_destroy();
+        destroyWeb();
     }
 }
     

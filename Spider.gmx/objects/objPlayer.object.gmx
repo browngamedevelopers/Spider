@@ -154,8 +154,7 @@ if(mouseDown and canShoot){
         
         isShooting = true;
         onVine = false;
-    }
-     
+    } 
 }
 
 else{ // If mouse is not held down
@@ -170,8 +169,8 @@ else{ // If mouse is not held down
             instance_destroy();
         }   
     }
+    
     physics_world_gravity(0, gravWhenFalling);
-
     isSwinging = false;
     isShooting = false;
 }
@@ -278,16 +277,20 @@ moveV = kUp + kDown;
 if(onGround){
     phy_speed_x = speedOnRelease + moveH * moveSpeed;
     image_speed = .2;
+    
+    // animate right direction
     if(phy_speed_x &gt; 0){
         imageStart = 8;
         imageEnd = 15;
     }
     
+    // animate left direction
     else if(phy_speed_x &lt; 0){
         imageStart = 0;
         imageEnd = 7;
     }
     
+    // stay still
     else{
         imageEnd = imageStart + 1;
     }
@@ -363,26 +366,28 @@ else{
             <kind>1</kind>
             <string>/// Collision with enemies
 
-// manual collision checking is needed for physics and
+// manual collision checking is needed for physics and 
 // non-physics objects needed
-if (instance_exists(objPlayer)) {
-    if (collision_ellipse(phy_position_x - 41, phy_position_y - 23, 
+if(instance_exists(objPlayer)){
+
+    // Collision with enemies
+    if(collision_ellipse(phy_position_x - 41, phy_position_y - 23, 
                            phy_position_x + 17, phy_position_y + 17, 
-                           objEnemyParent, false, false)) {
+                           objEnemyParent, false, false)){
         spiderDie();
     }
     
     // Collision with fly
-    if (collision_ellipse(phy_position_x - 41, phy_position_y - 23, 
+    if(collision_ellipse(phy_position_x - 41, phy_position_y - 23, 
                            phy_position_x + 17, phy_position_y + 17, 
-                           objFlyingEnemy, false, false)) {
+                           objFlyingEnemy, false, false)){
         spiderDie();
     }
     
     // manual collision checking for raindrop
-    if (collision_ellipse(phy_position_x - 41, phy_position_y - 23, 
+    if(collision_ellipse(phy_position_x - 41, phy_position_y - 23, 
                            phy_position_x + 17, phy_position_y + 17, 
-                           objRaindrop, false, false)) {
+                           objRaindrop, false, false)){
         spiderDie();
     }  
 }
@@ -416,17 +421,27 @@ if (instance_exists(objPlayer)) {
     <event eventtype="4" ename="objGoal">
       <action>
         <libid>1</libid>
-        <id>222</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_next_room</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Transition to next room
+if(room_exists(room_next(room))){
+    room_goto_next();
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="4" ename="objBounce">
@@ -446,7 +461,7 @@ if (instance_exists(objPlayer)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Bounce
+            <string>/// Bounce of Mushroom
 phy_speed_y -= 5;
 show_debug_message("bouncing");
 </string>

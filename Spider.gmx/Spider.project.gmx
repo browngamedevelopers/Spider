@@ -73,6 +73,10 @@
     <script>scripts\atan2.gml</script>
     <script>scripts\vectorMagnitude.gml</script>
     <script>scripts\spiderDie.gml</script>
+    <scripts name="web">
+      <script>scripts\attachWeb.gml</script>
+      <script>scripts\destroyWeb.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\objWeb</object>

@@ -3,7 +3,7 @@
   <spriteName>sprWeb</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-998</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize variables
-depth = -998;
 phy_bullet = true;
 maxLength = 750;
 </string>
@@ -54,8 +53,7 @@ maxLength = 750;
             <string>/// Set max distance
 var distance = point_distance(objPlayer.x, objPlayer.y, x, y);
 if(distance &gt; maxLength){
-    phy_speed_x = 0;
-    phy_speed_y = 0;
+    destroyWeb();
 }
 </string>
           </argument>
@@ -79,75 +77,19 @@ if(distance &gt; maxLength){
             <kind>1</kind>
             <string>/// Collisions
 
+// Moss Collision
+var collideFloor = collision_line(x, y, objPlayer.x, objPlayer.y, objFloor, false, false);
+if(collideFloor){
+    attachWeb();
+}
+
 // Enemy object collision
-var collideEnemy = collision_line(x, y, objPlayer.x, objPlayer.y, objEnemyParent, false, false);
-var collideWallNongrippable = collision_line(x, y, objPlayer.x, objPlayer.y, objSurfaceNongrippable, false, false);
-
-if (collideEnemy or collideWallNongrippable) {
-    with (objPlayer){
-        isSwinging = false;
-        isShooting = false;
-        mouseDown = false;
-        canShoot = false;
-        alarm[0] = room_speed * 2;
-        physics_joint_delete(joint);
-    }
+else{
+    var collideEnemy = collision_line(x, y, objPlayer.x, objPlayer.y, objEnemyParent, false, false);
+    var collideWallNongrippable = collision_line(x, y, objPlayer.x, objPlayer.y, objSurfaceNongrippable, false, false);
     
-    instance_destroy();
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objFloor">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Web attach
-
-phy_speed_x = 0;
-phy_speed_y = 0;
-var webX = x;
-var webY = y;
-
-var firstCollide = false;
-with (objPlayer) {
-    firstCollide = not isSwinging;
-}
-
-// Create joint between web end and wall
-if (firstCollide) { // Called only once before start swinging
-    physics_joint_distance_create(
-        self, objFloor, 
-        x, y, x, y,
-        false);
-        
-    with (objPlayer) {
-    
-        webLength = vectorMagnitude(webX - x, webY - y);
-        
-        // Create joint between player and wall
-        joint = physics_joint_rope_create(
-            objPlayer, objFloor,
-            x, y, webX, webY, webLength,  false);
- 
-        isShooting = false;
-        isSwinging = true;
+    if(collideEnemy or collideWallNongrippable){
+        destroyWeb();
     }
 }
 
@@ -174,7 +116,9 @@ if (firstCollide) { // Called only once before start swinging
           <argument>
             <kind>1</kind>
             <string>/// Draw web
-draw_line_width_colour(objPlayer.x, objPlayer.y, phy_position_x, phy_position_y, 2, c_white, c_white);
+draw_line_width_colour(objPlayer.x, objPlayer.y,
+                        phy_position_x, phy_position_y, 
+                        2, c_white, c_white);
 </string>
           </argument>
         </arguments>
@@ -184,7 +128,7 @@ draw_line_width_colour(objPlayer.x, objPlayer.y, phy_position_x, phy_position_y,
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>1</PhysicsObjectShape>
-  <PhysicsObjectDensity>0.00999999977648258</PhysicsObjectDensity>
+  <PhysicsObjectDensity>0</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0</PhysicsObjectLinearDamping>
