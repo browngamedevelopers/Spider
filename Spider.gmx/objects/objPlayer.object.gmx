@@ -330,10 +330,10 @@ if(y &gt; room_height + 100){
             <kind>1</kind>
             <string>/// Check for Floor Collision
 
-var ground = instance_place(x, y + 15, objSurfaceNongrippable);
-var mushroom = place_meeting(x, y + 15, objBounce);
+var ground = instance_place(x, y + 18, objSurfaceNongrippable);
+var mushroom = place_meeting(x, y + 18, objBounce);
              
-if(ground || mushroom){
+if(ground){
     var vert = (ground.y &gt; phy_position_y + 17);
     if(vert){
         speedOnRelease = 0;
@@ -396,28 +396,6 @@ if(instance_exists(objPlayer)){
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objSurfaceNongrippable">
-      <action>
-        <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>Allow collisions with nongrippable surface</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="objGoal">
       <action>
         <libid>1</libid>
@@ -440,6 +418,28 @@ if(room_exists(room_next(room))){
     room_goto_next();
 }
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objSurfaceNongrippable">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>Allow collisions with nongrippable surface</string>
           </argument>
         </arguments>
       </action>
@@ -482,9 +482,9 @@ show_debug_message("bouncing");
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>0,16</point>
-    <point>80,16</point>
+    <point>12,14</point>
+    <point>80,14</point>
     <point>80,64</point>
-    <point>0,64</point>
+    <point>12,64</point>
   </PhysicsShapePoints>
 </object>

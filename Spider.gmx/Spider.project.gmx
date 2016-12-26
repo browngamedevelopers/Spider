@@ -79,9 +79,9 @@
     </scripts>
   </scripts>
   <objects name="objects">
-    <object>objects\objWeb</object>
     <object>objects\objPlayer</object>
     <object>objects\objSpiderDead</object>
+    <object>objects\objWeb</object>
     <object>objects\objBounce</object>
     <object>objects\objSurfaceNongrippable</object>
     <object>objects\objGoal</object>
