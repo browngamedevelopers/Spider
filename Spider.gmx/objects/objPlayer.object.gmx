@@ -276,7 +276,7 @@ moveV = kUp + kDown;
 // Movement
 if(onGround){
     phy_speed_x = speedOnRelease + moveH * moveSpeed;
-    image_speed = .2;
+    image_speed = .25;
     
     // animate right direction
     if(phy_speed_x &gt; 0){
@@ -390,32 +390,6 @@ if(instance_exists(objPlayer)){
                            objRaindrop, false, false)){
         spiderDie();
     }  
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objGoal">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Transition to next room
-if(room_exists(room_next(room))){
-    room_goto_next();
 }
 </string>
           </argument>

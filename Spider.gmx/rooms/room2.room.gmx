@@ -95,7 +95,7 @@
     <instance objName="objMossBottom" x="1664" y="320" name="inst_55530C08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMossBotLeft" x="1440" y="320" name="inst_9701FF69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMossBotRight" x="1696" y="320" name="inst_70D2EC80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCrawlingEnemy" x="1664" y="351" name="inst_471EA3B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCrawlingEnemy" x="1656" y="336" name="inst_471EA3B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMossBottom" x="1920" y="384" name="inst_4FF378A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMossBottom" x="1952" y="384" name="inst_6F090483" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMossBottom" x="1984" y="384" name="inst_7FA4CA78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -6,14 +6,17 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sprPlayer</sprite>
     <sprite>sprites\sprMouse</sprite>
     <sprite>sprites\sprWeb</sprite>
     <sprite>sprites\sprMenu</sprite>
-    <sprite>sprites\sprSpiderDead</sprite>
     <sprite>sprites\sprGoal</sprite>
     <sprite>sprites\sprSurfaceNongrippable</sprite>
     <sprite>sprites\sprBounce</sprite>
+    <sprites name="Spider">
+      <sprite>sprites\sprSpiderCrawling</sprite>
+      <sprite>sprites\sprSpiderDead</sprite>
+      <sprite>sprites\sprPlayer</sprite>
+    </sprites>
     <sprites name="Mushroom">
       <sprite>sprites\sprMushroomLeft</sprite>
       <sprite>sprites\sprMushroomTopLeft</sprite>
@@ -81,6 +84,8 @@
   <objects name="objects">
     <object>objects\objPlayer</object>
     <object>objects\objSpiderDead</object>
+    <object>objects\objSpiderWalking</object>
+    <object>objects\objSpiderCrawling</object>
     <object>objects\objWeb</object>
     <object>objects\objBounce</object>
     <object>objects\objSurfaceNongrippable</object>
