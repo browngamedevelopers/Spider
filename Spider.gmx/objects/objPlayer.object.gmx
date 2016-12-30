@@ -458,7 +458,7 @@ show_debug_message("bouncing");
   <PhysicsShapePoints>
     <point>12,14</point>
     <point>80,14</point>
-    <point>80,64</point>
-    <point>12,64</point>
+    <point>80,60</point>
+    <point>12,60</point>
   </PhysicsShapePoints>
 </object>
