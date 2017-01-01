@@ -8,7 +8,7 @@
   <sprites name="sprites">
     <sprite>sprites\sprMouse</sprite>
     <sprite>sprites\sprWeb</sprite>
-    <sprite>sprites\sprMenu</sprite>
+    <sprite>sprites\sprPauseMenu</sprite>
     <sprite>sprites\sprGoal</sprite>
     <sprite>sprites\sprSurfaceNongrippable</sprite>
     <sprite>sprites\sprFloor</sprite>

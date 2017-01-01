@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-999</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>/// Initialize Variables
 global.pause = 0;
-depth = -999;
 </string>
           </argument>
         </arguments>
@@ -52,42 +51,48 @@ depth = -999;
             <kind>1</kind>
             <string>/// Pause Game
 
-if (keyboard_check_pressed(vk_space)) {
-    if (global.pause == 0) {
+// pause game if not already paused
+if(keyboard_check_pressed(vk_space)){
+    if(global.pause == 0){
         global.pause = 1;
         physics_pause_enable(true);
     } 
 }
 
-if (global.pause) {
+// game paused
+if(global.pause){
     with(objPlayer){
         image_speed = 0;
     }
     
-    if (mouse_check_button_pressed(mb_left)){
+    // left mouse button pressed
+    if(mouse_check_button_pressed(mb_left)){
         
-        var myx = mouse_x - view_xview[0];
-        var myy = mouse_y - view_yview[0];
+        var mx = mouse_x - view_xview[0];
+        var my = mouse_y - view_yview[0];
         
-        if (myx &gt;= 534 &amp;&amp; myx &lt;= 684) {
+        if(mx &gt;= 437 &amp;&amp; my &lt;= 609){
+            global.pause = 0;
             
             // resume game
-            if (myy &gt;= 134 &amp;&amp; myy &lt;= 165) {
-                global.pause = 0;
+            if(my &gt;= 159 &amp;&amp; my &lt;= 194){
                 physics_pause_enable(false);
             } 
             
             // restart level
-            else if (myy &gt;= 182 &amp;&amp; myy &lt;= 217) {
+            else if(my &gt;= 210 &amp;&amp; my &lt;= 249){
                 room_restart();
+                instance_destroy();
             } 
             
             // go to main menu
-            else if (myy &gt;= 237 &amp;&amp; myy &lt;= 270) {
+            else if(my &gt;= 268 &amp;&amp; my &lt;= 302){
+                room_goto(rmStartMenu);
+                instance_destroy();
             } 
             
             // exit game
-            else if (myy &gt;= 291 &amp;&amp; myy &lt;= 329) {
+            else if(my &gt;= 324 &amp;&amp; my &lt;= 360){
                 game_end();
             }
         }
@@ -117,23 +122,19 @@ if (global.pause) {
             <kind>1</kind>
             <string>/// Draw pause Menu
 
-if (global.pause) {
-    var x_center = view_xview[0] + 1200 / 2;
-    var y_center = view_yview[0] + 800 / 2
+if(global.pause){
+    var x_center = view_xview[0] + view_wview[0] / 2;
 
-    //background
+    // draw light black background
     draw_set_color(c_black);
     draw_set_alpha(0.5); //transparency
     draw_rectangle(0,0,room_width, room_height,0);
     
-    //text
-    //draw_set_color(c_white);
+    // draw sprPauseMenu sprite
     draw_set_alpha(1);
-    //var message = "Game Paused";
-    //draw_text(x_center + string_width(message) / 2, y_center + string_height(message) / 2, "Game Paused");
-    draw_sprite(sprMenu, 200, x_center, 0);
+    draw_sprite(sprPauseMenu, 0, x_center, 0);
     
-    //back to default
+    // set color back to default
     draw_set_color(c_black);
 }
 </string>

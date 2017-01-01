@@ -390,6 +390,7 @@
     <instance objName="objFloor" x="3064" y="212" name="inst_983AA15C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="3032" y="212" name="inst_25623026" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="3016" y="212" name="inst_CC0151DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPause" x="56" y="20" name="inst_CC9FC44E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileWood" x="112" y="432" w="32" h="32" xo="32" yo="0" id="10001463" name="inst_2637D086" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

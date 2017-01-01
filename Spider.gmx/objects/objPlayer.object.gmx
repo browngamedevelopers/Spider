@@ -130,9 +130,13 @@ canShoot = true;
             <kind>1</kind>
             <string>/// Web Shooting
 
-//if (global.pause) exit;
+if(global.pause){
+    exit;
+}
 
 var mouseDown =  device_mouse_check_button(0, mb_left);;
+window_mouse_set(clamp(window_mouse_get_x(), 0, window_get_width()),
+                 clamp(window_mouse_get_y(), 0, window_get_height()));
 
 // fire if the mouse is clicked in range over block
 if(mouseDown and canShoot){
@@ -209,9 +213,7 @@ if(not mouseDown){
             <kind>1</kind>
             <string>/// Web climbing 
 
-//if (global.pause) exit;
-
-if (isSwinging) {
+if(isSwinging){
     var kUp = keyboard_check(vk_up) || keyboard_check(ord('W'));
     var kDown = keyboard_check(vk_down) || keyboard_check(ord('S'));
 
@@ -254,8 +256,6 @@ if (isSwinging) {
           <argument>
             <kind>1</kind>
             <string>/// Movement
-
-//if (global.pause) exit;
 
 // Get input 
 var kLeft = -(keyboard_check(vk_left) || keyboard_check(ord('A'))); 
@@ -330,9 +330,7 @@ if(y &gt; room_height + 100){
             <kind>1</kind>
             <string>/// Check for Floor Collision
 
-var ground = instance_place(x, y + 18, objSurfaceNongrippable);
-var mushroom = place_meeting(x, y + 18, objBounce);
-             
+var ground = instance_place(x, y + 18, objSurfaceNongrippable); 
 if(ground){
     var vert = (ground.y &gt; phy_position_y + 17);
     if(vert){
