@@ -9,6 +9,7 @@
     <sprite>sprites\sprMouse</sprite>
     <sprite>sprites\sprWeb</sprite>
     <sprite>sprites\sprPauseMenu</sprite>
+    <sprite>sprites\sprQuitScreen</sprite>
     <sprite>sprites\sprGoal</sprite>
     <sprite>sprites\sprSurfaceNongrippable</sprite>
     <sprite>sprites\sprFloor</sprite>

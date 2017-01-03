@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>/// Initialize Variables
 global.pause = 0;
+quit = 0;
 </string>
           </argument>
         </arguments>
@@ -70,13 +71,27 @@ if(global.pause){
         
         var mx = mouse_x - view_xview[0];
         var my = mouse_y - view_yview[0];
+
+        // quitting        
+        if(quit){
+            // end game
+            if(mx &gt;=422 &amp;&amp; mx &lt;= 498 &amp;&amp; my &gt;= 292 &amp;&amp; my &lt;= 314){
+                game_end();
+            }
+            
+            // return to pause
+            if(mx &gt;= 511 &amp;&amp; mx &lt;= 586 &amp;&amp; my &gt;= 292 &amp;&amp; my &lt;= 314){
+                quit = 0;
+            }
+        }
         
-        if(mx &gt;= 437 &amp;&amp; my &lt;= 609){
-            global.pause = 0;
+        // regular pause screen
+        else if(mx &gt;= 437 &amp;&amp; mx &lt;= 609){
             
             // resume game
             if(my &gt;= 159 &amp;&amp; my &lt;= 194){
                 physics_pause_enable(false);
+                global.pause = 0;
             } 
             
             // restart level
@@ -93,7 +108,7 @@ if(global.pause){
             
             // exit game
             else if(my &gt;= 324 &amp;&amp; my &lt;= 360){
-                game_end();
+                quit = 1;
             }
         }
     }
@@ -133,10 +148,16 @@ if(global.pause){
     // draw sprPauseMenu sprite
     draw_set_alpha(1);
     draw_sprite(sprPauseMenu, 0, x_center, 0);
+ 
+    // draw sprQuitScreen sprite   
+    if(quit){
+        draw_sprite(sprQuitScreen, 0, x_center, 0);
+    }
     
     // set color back to default
     draw_set_color(c_black);
 }
+
 </string>
           </argument>
         </arguments>
